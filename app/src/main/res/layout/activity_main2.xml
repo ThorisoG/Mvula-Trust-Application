@@ -36,7 +36,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:padding="10dp"
-        android:layout_marginStart="-135dp"
+        android:layout_marginStart="70dp"
         app:headerLayout="@layout/header_file"
         android:background="@drawable/settings_bg"
         app:layout_constraintEnd_toEndOf="parent"
