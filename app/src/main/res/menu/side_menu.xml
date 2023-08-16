@@ -26,6 +26,10 @@
             android:icon="@drawable/information"
             android:title="About Us"/>
 
+        <item android:id="@+id/nav_contact"
+            android:icon="@drawable/work_icon"
+            android:title="Contact Us"/>
+
         <item android:id="@+id/logout"
             android:icon="@drawable/logout_icon"
             android:title="Logout"/>
