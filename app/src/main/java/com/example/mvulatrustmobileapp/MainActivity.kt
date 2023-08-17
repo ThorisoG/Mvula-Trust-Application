@@ -3,7 +3,6 @@ package com.example.mvulatrustmobileapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageButton
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
