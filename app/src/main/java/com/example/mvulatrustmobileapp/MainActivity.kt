@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         // Handler to navigate to the next activity after the splashTimeOut
         Handler().postDelayed({
             //the Main activity 2 is the intent where you want to go//
-            val intent = Intent(this, MainActivity2::class.java)
+            val intent = Intent(this, User_home::class.java)
             startActivity(intent)
             finish()
         }, splashTimeOut)
