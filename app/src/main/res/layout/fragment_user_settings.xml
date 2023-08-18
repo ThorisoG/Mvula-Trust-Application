@@ -31,7 +31,7 @@
                 android:layout_marginBottom="0dp"
                 android:text="Settings"
                 android:textColor="@color/white"
-                android:textSize="28sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>
@@ -73,13 +73,13 @@
 
             <ImageButton
                 android:id="@+id/next"
-                android:layout_width="30dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="143dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="2dp"
-                android:contentDescription="Cick to open this setting"
+                android:contentDescription="Click to open this setting"
                 android:background="#EDEBEB"
                 android:padding="2dp"
                 android:scaleType="centerCrop"
@@ -110,12 +110,12 @@
 
             <ImageButton
                 android:id="@+id/next1"
-                android:layout_width="30dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="2dp"
-                android:contentDescription="Cick to open this setting"
+                android:contentDescription="Click to open this setting"
                 android:background="#EDEBEB"
                 android:padding="2dp"
                 android:scaleType="centerCrop"
@@ -146,12 +146,12 @@
 
             <ImageButton
                 android:id="@+id/next2"
-                android:layout_width="30dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="2dp"
-                android:contentDescription="Cick to open this setting"
+                android:contentDescription="Click to open this setting"
                 android:background="#EDEBEB"
                 android:padding="2dp"
                 android:scaleType="centerCrop"
@@ -181,12 +181,11 @@
 
                 <ImageButton
                     android:id="@+id/next5"
-                    android:layout_width="30dp"
-                    android:layout_height="40dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="12dp"
-
-                    android:contentDescription="Cick to open this setting"
+                    android:contentDescription="Click to open this setting"
                     android:layout_marginEnd="2dp"
                     android:background="#EDEBEB"
                     android:padding="2dp"
@@ -218,12 +217,12 @@
 
                 <ImageButton
                     android:id="@+id/next7"
-                    android:layout_width="30dp"
-                    android:layout_height="40dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="12dp"
                     android:layout_marginEnd="2dp"
-                    android:contentDescription="Cick to open this setting"
+                    android:contentDescription="Click to open this setting"
                     android:background="#EDEBEB"
                     android:padding="2dp"
                     android:scaleType="centerCrop"
@@ -255,12 +254,12 @@
 
             <ImageButton
                 android:id="@+id/next8"
-                android:layout_width="30dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="2dp"
-                android:contentDescription="Cick to open this setting"
+                android:contentDescription="Click to open this setting"
                 android:background="#EDEBEB"
                 android:padding="2dp"
                 android:scaleType="centerCrop"
@@ -276,6 +275,7 @@
             android:layout_height="50dp"
             android:layout_marginBottom="60dp"
             android:background="@drawable/button_bg2"
+            android:contentDescription="Click logout of the app"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"

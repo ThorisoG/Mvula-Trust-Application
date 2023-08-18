@@ -1,10 +1,12 @@
 package com.example.mvulatrustmobileapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +28,7 @@ class User_settings : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -35,6 +38,14 @@ class User_settings : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user_settings, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_user_settings, container, false)
+
+        val logoutButton = rootView.findViewById<ImageButton>(R.id.button)
+        logoutButton.setOnClickListener {
+            val intent = Intent(requireContext(), LoginPage::class.java)
+            startActivity(intent)
+        }
+        return rootView
     }
 
     companion object {

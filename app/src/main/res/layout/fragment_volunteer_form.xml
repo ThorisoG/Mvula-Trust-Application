@@ -216,7 +216,7 @@
             android:id="@+id/imageButton"
             android:layout_width="180dp"
             android:layout_height="48dp"
-            android:contentDescription="Cick on program for more details"
+            android:contentDescription="Click on program for more details"
             android:background="@drawable/button_bg2"
             android:layout_marginTop="20dp"
             android:layout_marginStart="110dp"/>
