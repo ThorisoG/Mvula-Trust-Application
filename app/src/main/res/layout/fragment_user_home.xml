@@ -1,14 +1,352 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".User_home">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home screen for the users side" />
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        android:background="#00355E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:text="Hello user"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="61dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/search_bg"
+            android:hint="Search"
+            android:textAlignment="center"
+            android:textColorHint="#D6D1D1"
+            android:inputType="textPersonName"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_alignStart="@+id/search"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="13dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/search_icon" />
+
+    </RelativeLayout>
+
+    <!--first program-->
+    <TextView
+        android:id="@+id/textView0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Our Programs"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <ImageButton
+        android:id="@+id/program1"
+        android:layout_width="370dp"
+        android:layout_height="100dp"
+        android:background="#00000000"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView0"
+        app:srcCompat="@drawable/button_bg" />
+
+    <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="114dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="-4dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="@+id/program1"
+            app:layout_constraintHorizontal_bias="0.019"
+            app:layout_constraintStart_toStartOf="@+id/program1"
+            app:layout_constraintTop_toTopOf="@+id/program1"
+            app:srcCompat="@drawable/water_man_1" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Water Resource Management"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="@+id/program1"
+            app:layout_constraintStart_toEndOf="@+id/imageView1"
+            app:layout_constraintTop_toTopOf="@+id/program1" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="239dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="This programme therefore consists of the key areas of infrastructure creation, maintenance, as well as water quality and demand management."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/program1"
+            app:layout_constraintEnd_toEndOf="@+id/program1"
+            app:layout_constraintStart_toEndOf="@+id/imageView1" />
+
+        <!--Second program-->
+        <ImageButton
+            android:id="@+id/program2"
+            android:layout_width="370dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="15dp"
+            android:background="#00000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.457"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/program1"
+            app:srcCompat="@drawable/button_bg" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="118dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="255dp"
+            android:layout_marginTop="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/program2"
+            app:layout_constraintEnd_toEndOf="@+id/program2"
+            app:layout_constraintHorizontal_bias="0.034"
+            app:layout_constraintStart_toStartOf="@+id/program2"
+            app:layout_constraintTop_toTopOf="@+id/program2"
+            app:srcCompat="@drawable/advocacy_3" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Training and Advocacy"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/program2"
+            app:layout_constraintHorizontal_bias="0.174"
+            app:layout_constraintStart_toStartOf="@+id/program2"
+            app:layout_constraintTop_toTopOf="@+id/program2" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="235dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
+            android:text="The programme aims to strengthen poor communities' resilience to external shocks and train future entrepreneurs in water and sanitation provision."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/program2"
+            app:layout_constraintEnd_toEndOf="@+id/program2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/program2" />
+
+        <!--third program-->
+        <ImageButton
+            android:id="@+id/program3"
+            android:layout_width="370dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="15dp"
+            android:background="#00000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.542"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/program2"
+            app:srcCompat="@drawable/button_bg" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="118dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="-9dp"
+            android:layout_marginTop="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/program3"
+            app:layout_constraintEnd_toEndOf="@+id/program3"
+            app:layout_constraintHorizontal_bias="0.034"
+            app:layout_constraintStart_toStartOf="@+id/program3"
+            app:layout_constraintTop_toTopOf="@+id/program3"
+            app:srcCompat="@drawable/water_sust_1"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Sustainable Water and Sanitation"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/program3"
+            app:layout_constraintHorizontal_bias="0.607"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/program3" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="214dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="12dp"
+            android:text="Value and protection of water for the good of all."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/program3"
+            app:layout_constraintEnd_toEndOf="@+id/program3"
+            app:layout_constraintHorizontal_bias="0.437"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintVertical_bias="0.318" />
+
+        <!--fourth program-->
+        <ImageButton
+            android:id="@+id/program4"
+            android:layout_width="370dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="15dp"
+            android:background="#00000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.542"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/program3"
+            app:srcCompat="@drawable/button_bg" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="118dp"
+            android:layout_height="101dp"
+            android:layout_marginStart="252dp"
+            android:layout_marginTop="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/program4"
+            app:layout_constraintEnd_toEndOf="@+id/program4"
+            app:layout_constraintHorizontal_bias="0.034"
+            app:layout_constraintStart_toStartOf="@+id/program4"
+            app:layout_constraintTop_toTopOf="@+id/program4"
+            app:srcCompat="@drawable/government_support_1"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Local Government Support"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/program4"
+            app:layout_constraintHorizontal_bias="0.13"
+            app:layout_constraintStart_toStartOf="@+id/program4"
+            app:layout_constraintTop_toTopOf="@+id/program4" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="239dp"
+            android:layout_height="wrap_content"
+            android:text="Assisting municipalities to be developmental by focusing on their mandates."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/program4"
+            app:layout_constraintStart_toStartOf="@+id/program4"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.897" />
+
+        <!--Fifth program-->
+        <ImageButton
+            android:id="@+id/program5"
+            android:layout_width="370dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="15dp"
+            android:background="#00000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.609"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/program4"
+            app:srcCompat="@drawable/button_bg" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="118dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="-11dp"
+            android:layout_marginTop="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/program5"
+            app:layout_constraintEnd_toEndOf="@+id/program5"
+            app:layout_constraintHorizontal_bias="0.034"
+            app:layout_constraintStart_toStartOf="@+id/program5"
+            app:layout_constraintTop_toTopOf="@+id/program5"
+            app:srcCompat="@drawable/infrastructure_1"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Infrastructure Creation \nand Property Development"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/program5"
+            app:layout_constraintHorizontal_bias="0.619"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="@+id/program5" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="239dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:text="This strategy provides community involvement through social workshops for project prioritization and planning."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/program5"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
