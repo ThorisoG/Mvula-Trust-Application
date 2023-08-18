@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     private val splashTimeOut: Long = 5000 // 5 seconds
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main2)
 
         // Handler to navigate to the next activity after the splashTimeOut
         Handler().postDelayed({

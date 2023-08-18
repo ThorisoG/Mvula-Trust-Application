@@ -40,11 +40,7 @@ class User_settings : Fragment() {
         return inflater.inflate(R.layout.fragment_user_settings, container, false)
         val rootView = inflater.inflate(R.layout.fragment_user_settings, container, false)
 
-        val logoutButton = rootView.findViewById<ImageButton>(R.id.button)
-        logoutButton.setOnClickListener {
-            val intent = Intent(requireContext(), LoginPage::class.java)
-            startActivity(intent)
-        }
+
         return rootView
     }
 

@@ -46,6 +46,7 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -68,6 +69,7 @@
             android:background="#000000" />
 
         <EditText
+            android:id="@+id/Password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -94,6 +96,7 @@
             android:layout_marginTop="0dp">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/loginbt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -103,7 +106,7 @@
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="#4E525B"
                 android:elevation="0dp"
-                android:src="@drawable/baseline_arrow_forward_24"
+                android:src="@drawable/round_arrow_forward_24"
                 android:tint="@android:color/white"
                 app:elevation="0dp"
                 app:fabCustomSize="80dp"
@@ -142,6 +145,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/signRedirect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"

@@ -13,10 +13,16 @@
         android:theme="@style/Theme.MvulaTrustMobileApp"
         tools:targetApi="31">
         <activity
-            android:name=".SiginUp_Page"
+            android:name=".SignUp"
             android:exported="false" />
         <activity
             android:name=".LoginPage"
+            android:exported="false" />
+        <activity
+            android:name=".SignUp_Page"
+            android:exported="false" />
+        <activity
+            android:name=".LoginIn"
             android:exported="false" />
         <activity
             android:name=".Program5"
