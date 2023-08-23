@@ -30,7 +30,7 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         if(savedInstanceState == null){
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, User_settings()).commit()
+                .replace(R.id.fragment_container, User_home()).commit()
             navigationView.setCheckedItem(R.id.nav_home)
         }
     }

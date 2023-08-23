@@ -29,7 +29,7 @@ class LoginPage : AppCompatActivity() {
                     databaseHelper!!.checkEmailandPassword(email, password)
                 if (checkCredentials) {
                     Toast.makeText(this@LoginPage, "Login successfully", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(applicationContext, MainActivity::class.java)
+                    val intent = Intent(applicationContext, MainActivity2::class.java)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@LoginPage, "Oops invalid Credentials", Toast.LENGTH_SHORT)
