@@ -1,10 +1,12 @@
 package com.example.mvulatrustmobileapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +28,7 @@ class User_home : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -35,7 +38,43 @@ class User_home : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user_home, container, false)
-    }
+
+                val rootView = inflater.inflate(R.layout.fragment_user_home, container, false)
+
+                val button1 = rootView.findViewById<ImageButton>(R.id.program1)
+                val button2 = rootView.findViewById<ImageButton>(R.id.program2)
+                val button3 = rootView.findViewById<ImageButton>(R.id.program3)
+                val button4 = rootView.findViewById<ImageButton>(R.id.program4)
+                val button5 = rootView.findViewById<ImageButton>(R.id.program5)
+
+                button1.setOnClickListener {
+                    val intent = Intent(requireContext(), Program1::class.java)
+                    startActivity(intent)
+                }
+
+                button2.setOnClickListener {
+                    val intent = Intent(requireContext(), Program2::class.java)
+                    startActivity(intent)
+                }
+
+                button3.setOnClickListener {
+                    val intent = Intent(requireContext(), Program3::class.java)
+                    startActivity(intent)
+                }
+
+                button4.setOnClickListener {
+                    val intent = Intent(requireContext(), Program4::class.java)
+                    startActivity(intent)
+                }
+
+                button5.setOnClickListener {
+                    val intent = Intent(requireContext(), Program5::class.java)
+                    startActivity(intent)
+                }
+
+                return rootView
+            }
+
 
     companion object {
         /**
