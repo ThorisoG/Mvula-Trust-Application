@@ -11,7 +11,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="90dp"
         android:background="#00355E">
 
         <TextView
@@ -21,7 +21,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="110dp"
-            android:layout_marginBottom="0dp"
+            android:layout_marginBottom="10dp"
             android:text="Volunteer Form"
             android:textColor="@color/white"
             android:textSize="25sp"
@@ -31,13 +31,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:orientation="vertical">
+        android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        android:focusableInTouchMode="true">
 
         <EditText
             android:id="@+id/userName"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:layout_margin="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
@@ -53,7 +54,7 @@
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="-10dp"
             android:layout_marginRight="15dp"
@@ -67,7 +68,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="15dp"
@@ -81,7 +82,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="0dp"
             android:layout_marginRight="15dp"
@@ -95,113 +96,80 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="0dp"
             android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/shape_background"
-            android:hint="Program:"
-            android:inputType="textPersonName"
+            android:hint="Home Address: "
+            android:inputType="phone"
             android:padding="15dp"
-            android:textSize="17sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@drawable/arrow_drop_down_icon"
-            android:layout_marginTop="-50dp"
-            android:layout_marginStart="360dp"/>
-
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
-            android:text="Highest qualification obtained"
-            android:textStyle="bold"/>
-
-        <CheckBox
-            android:id="@+id/checkBox"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="-15dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="-15dp"
-            android:text="Higher Certificate" />
+            android:layout_margin="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+            <AutoCompleteTextView
+                android:id="@+id/auto_complete1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/item_label"
+                android:inputType="none"
+                android:text="" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <CheckBox
-            android:id="@+id/checkBox2"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="-5dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="-15dp"
-            android:text="Diploma" />
+            android:layout_margin="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
-        <CheckBox
-            android:id="@+id/checkBox4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="-5dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="-15dp"
-            android:text="Bachelor" />
+            <AutoCompleteTextView
+                android:id="@+id/auto_complete2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/Qualification"
+                android:inputType="none"
+                android:text="" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <CheckBox
-            android:id="@+id/checkBox5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="-5dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="-15dp"
-            android:text="Grade 12" />
-
-        <CheckBox
-            android:id="@+id/checkBox6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="-5dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="15dp"
-            android:text="Other" />
+    </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="-5dp"
-            android:text="Upload CV" />
+            android:layout_marginTop="670dp"
+            android:text="Upload CV"
+            android:textSize="17dp"/>
 
         <ImageView
             android:id="@+id/imageView13"
             android:src="@drawable/upload_file_icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="50dp" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="690dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="180dp"
-            android:layout_marginTop="-60dp"
-            android:text="Upload Qualification" />
+            android:layout_marginTop="670dp"
+            android:text="Upload Qualification"
+            android:textSize="17dp"/>
 
         <ImageView
             android:id="@+id/imageView16"
             android:src="@drawable/upload_file_icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="190dp" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="690dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -214,8 +182,8 @@
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="180dp"
-            android:layout_height="48dp"
+            android:layout_width="190dp"
+            android:layout_height="50dp"
             android:contentDescription="Click on program for more details"
             android:background="@drawable/button_bg2"
             android:layout_marginTop="20dp"
@@ -232,7 +200,5 @@
             android:layout_marginStart="160dp"
             android:textSize="25sp"
             android:layout_marginTop="-40dp"/>
-    </LinearLayout>
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

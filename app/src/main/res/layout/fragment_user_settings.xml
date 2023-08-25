@@ -8,10 +8,10 @@
     tools:context=".User_settings"
     android:background="@drawable/settings_bg">
 
-        <RelativeLayout
+    <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="200dp"
             android:layout_marginBottom="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -19,31 +19,33 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0">
 
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="155dp"
-                android:layout_marginBottom="0dp"
-                android:text="Settings"
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="79dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="1dp"
+            android:text="Settings"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:textStyle="bold" />
 
         </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="348dp"
+        android:layout_width="450dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="80dp"
         android:background="@color/white"
         android:orientation="vertical"
-        android:layout_marginTop="60dp"
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,8 +81,8 @@
                 android:layout_marginStart="143dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="2dp"
-                android:contentDescription="Click to open this setting"
                 android:background="#EDEBEB"
+                android:contentDescription="Click to open this setting"
                 android:padding="2dp"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/next_icon" />
@@ -115,8 +117,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="2dp"
-                android:contentDescription="Click to open this setting"
                 android:background="#EDEBEB"
+                android:contentDescription="Click to open this setting"
                 android:padding="2dp"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/next_icon" />
@@ -151,83 +153,83 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="2dp"
-                android:contentDescription="Click to open this setting"
                 android:background="#EDEBEB"
+                android:contentDescription="Click to open this setting"
                 android:padding="2dp"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/next_icon" />
         </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
 
-                <ImageView
-                    android:id="@+id/customize"
-                    android:layout_width="40dp"
-                    android:layout_height="60dp"
-                    android:padding="2dp"
-                    app:srcCompat="@drawable/paintbrush" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="50dp"
-                    android:text="Personalization"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/next5"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="12dp"
-                    android:contentDescription="Click to open this setting"
-                    android:layout_marginEnd="2dp"
-                    android:background="#EDEBEB"
-                    android:padding="2dp"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/next_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/customize"
+                android:layout_width="40dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="4dp">
+                android:padding="2dp"
+                app:srcCompat="@drawable/paintbrush" />
 
-                <ImageView
-                    android:id="@+id/report"
-                    android:layout_width="40dp"
-                    android:layout_height="60dp"
-                    android:padding="2dp"
-                    app:srcCompat="@drawable/report_problem_icon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:text="Personalization"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="50dp"
-                    android:text="Report a problem"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+            <ImageButton
+                android:id="@+id/next5"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="2dp"
+                android:background="#EDEBEB"
+                android:contentDescription="Click to open this setting"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/next_icon" />
+        </RelativeLayout>
 
-                <ImageButton
-                    android:id="@+id/next7"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="2dp"
-                    android:contentDescription="Click to open this setting"
-                    android:background="#EDEBEB"
-                    android:padding="2dp"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/next_icon" />
-            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="4dp">
+
+            <ImageView
+                android:id="@+id/report"
+                android:layout_width="40dp"
+                android:layout_height="60dp"
+                android:padding="2dp"
+                app:srcCompat="@drawable/report_problem_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:text="Report a problem"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/next7"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="2dp"
+                android:background="#EDEBEB"
+                android:contentDescription="Click to open this setting"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/next_icon" />
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -259,21 +261,98 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="2dp"
-                android:contentDescription="Click to open this setting"
                 android:background="#EDEBEB"
+                android:contentDescription="Click to open this setting"
                 android:padding="2dp"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/next_icon" />
 
         </RelativeLayout>
 
-        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="3dp">
 
-        <ImageButton
+            <ImageView
+                android:id="@+id/feedback1"
+                android:layout_width="40dp"
+                android:layout_height="60dp"
+                android:padding="2dp"
+                android:rotation="-37"
+                app:srcCompat="@drawable/send_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:text="Send Feedback"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/next9"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="2dp"
+                android:background="#EDEBEB"
+                android:contentDescription="Click to open this setting"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/next_icon" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="3dp">
+
+            <ImageView
+                android:id="@+id/feedback3"
+                android:layout_width="40dp"
+                android:layout_height="60dp"
+                android:padding="2dp"
+                android:rotation="-37"
+                app:srcCompat="@drawable/send_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:text="Send Feedback"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/next10"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="2dp"
+                android:background="#EDEBEB"
+                android:contentDescription="Click to open this setting"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/next_icon" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageButton
             android:id="@+id/button"
             android:layout_width="180dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="50dp"
             android:background="@drawable/button_bg2"
             android:contentDescription="Click logout of the app"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -294,7 +373,7 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/power_icon" />
 
-        <TextView
+    <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
