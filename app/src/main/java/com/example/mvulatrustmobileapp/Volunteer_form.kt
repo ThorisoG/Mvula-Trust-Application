@@ -1,5 +1,6 @@
 package com.example.mvulatrustmobileapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,7 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.ImageButton
 import android.widget.Toast
+import android.app.Activity
+import android.net.Uri
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,6 +28,8 @@ class Volunteer_form : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private val PICK_FILE_REQUEST = 1
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,9 +61,9 @@ class Volunteer_form : Fragment() {
         }
 
         val itemList = listOf(
-            "Higher Certificate",
             "Grade 10",
-            "Matrix",
+            "Grade 12 (Matric)",
+            "Higher Certificate",
             "Diploma",
             "Degree",
             "Other"
@@ -71,8 +78,8 @@ class Volunteer_form : Fragment() {
             val itemSelected = adapter2.getItem(i)
             Toast.makeText(requireContext(), "Item: $itemSelected", Toast.LENGTH_SHORT).show()
         }
-    }
 
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -80,9 +87,36 @@ class Volunteer_form : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_volunteer_form, container, false)
+        val view = inflater.inflate(R.layout.fragment_volunteer_form, container, false)
 
+        val uploadButton = view.findViewById<ImageButton>(R.id.uploadButton)
+        uploadButton.setOnClickListener {
+            openFileChooser()
+        }
+
+        val uploadButton1 = view.findViewById<ImageButton>(R.id.uploadButton1)
+        uploadButton1.setOnClickListener {
+            openFileChooser()
+        }
+
+        return view
     }
 
+    private fun openFileChooser() {
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type = "application/pdf|application/msword|application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        startActivityForResult(intent, PICK_FILE_REQUEST)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == PICK_FILE_REQUEST && resultCode == Activity.RESULT_OK) {
+            if (data != null && data.data != null) {
+                val selectedFileUri: Uri = data.data!!
+                // Now you can handle the selected file URI (upload it, etc.)
+            }
+        }
+    }
 
     companion object {
         /**
@@ -103,4 +137,6 @@ class Volunteer_form : Fragment() {
                 }
             }
     }
-}
+
+
+    }

@@ -38,8 +38,15 @@ class User_settings : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user_settings, container, false)
+
         val rootView = inflater.inflate(R.layout.fragment_user_settings, container, false)
 
+        val button = rootView.findViewById<ImageButton>(R.id.button)
+
+        button.setOnClickListener {
+            val intent = Intent(requireContext(), LoginPage::class.java)
+            startActivity(intent)
+        }
 
         return rootView
     }

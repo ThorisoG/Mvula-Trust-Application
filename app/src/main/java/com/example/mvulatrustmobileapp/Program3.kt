@@ -10,16 +10,28 @@ class Program3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_program3)
 
-        var donate_btn = findViewById<ImageButton>(R.id.button)
-        donate_btn.setOnClickListener {
-            var Intent = Intent(this, Donation::class.java)
-            startActivity(Intent)
+        val home_btn = findViewById<ImageButton>(R.id.button4)
+        home_btn.setOnClickListener {
+            val fragment = User_home()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container2, fragment)
+                .commit()
         }
 
-        var volunteer_btn = findViewById<ImageButton>(R.id.button1)
+        val donate_btn = findViewById<ImageButton>(R.id.button)
+        donate_btn.setOnClickListener {
+            val fragment = Donation()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container1, fragment)
+                .commit()
+        }
+
+        val volunteer_btn = findViewById<ImageButton>(R.id.button1)
         volunteer_btn.setOnClickListener {
-            var Intent = Intent(this, Volunteer_form::class.java)
-            startActivity(Intent)
+            val fragment = Volunteer_form()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit()
         }
     }
 }

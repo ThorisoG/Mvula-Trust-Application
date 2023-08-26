@@ -17,14 +17,14 @@
         <TextView
             android:id="@+id/textView0"
             android:layout_width="wrap_content"
-            android:layout_height="51dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="200dp"
             android:layout_marginBottom="10dp"
             android:text="Volunteer Form"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
@@ -48,11 +48,10 @@
             android:inputType="textPersonName"
             android:padding="15dp"
             android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/idnum"
             android:layout_width="450dp"
             android:layout_height="70dp"
             android:layout_marginLeft="15dp"
@@ -61,12 +60,12 @@
             android:layout_marginBottom="0dp"
             android:background="@drawable/shape_background"
             android:hint="ID Number: "
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:padding="15dp"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/cellno"
             android:layout_width="450dp"
             android:layout_height="70dp"
             android:layout_marginLeft="15dp"
@@ -77,10 +76,10 @@
             android:hint="Phone Number: "
             android:inputType="number"
             android:padding="15dp"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/email"
             android:layout_width="450dp"
             android:layout_height="70dp"
             android:layout_marginLeft="15dp"
@@ -89,12 +88,12 @@
             android:layout_marginBottom="5dp"
             android:background="@drawable/shape_background"
             android:hint="Email Address: "
-            android:inputType="phone"
+            android:inputType="textEmailAddress"
             android:padding="15dp"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/address"
             android:layout_width="450dp"
             android:layout_height="70dp"
             android:layout_marginLeft="15dp"
@@ -103,14 +102,13 @@
             android:layout_marginBottom="5dp"
             android:background="@drawable/shape_background"
             android:hint="Home Address: "
-            android:inputType="phone"
+            android:inputType="textPostalAddress"
             android:padding="15dp"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="20sp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="450dp"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_margin="10dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
@@ -120,7 +118,9 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/item_label"
                 android:inputType="none"
-                android:text="" />
+                android:text=""
+                android:textSize="20sp"
+                android:contentDescription="Choose the program you want participate in"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -135,7 +135,8 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/Qualification"
                 android:inputType="none"
-                android:text="" />
+                android:text=""
+                android:textSize="20sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
@@ -146,15 +147,19 @@
             android:layout_marginStart="100dp"
             android:layout_marginTop="690dp"
             android:text="Upload CV"
-            android:textSize="17dp"/>
+            android:textSize="19dp"
+            android:textColor="@color/black"/>
 
         <ImageButton
-            android:id="@+id/imageView13"
+            android:id="@+id/uploadButton"
             android:src="@drawable/upload_file_icon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginStart="120dp"
-            android:layout_marginTop="720dp" />
+            android:layout_marginTop="720dp"
+            android:background="#00000000"
+            android:scaleType="centerCrop"
+            android:layout_centerInParent="true"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -162,32 +167,36 @@
             android:layout_marginStart="260dp"
             android:layout_marginTop="690dp"
             android:text="Upload Qualification"
-            android:textSize="17dp"/>
+            android:textSize="19dp"
+            android:textColor="@color/black"/>
 
         <ImageButton
-            android:id="@+id/imageView16"
+            android:id="@+id/uploadButton1"
             android:src="@drawable/upload_file_icon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginStart="320dp"
-            android:layout_marginTop="720dp"/>
+            android:layout_marginTop="720dp"
+            android:background="#00000000"
+            android:scaleType="centerCrop"
+            android:layout_centerInParent="true"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="70dp"
-            android:layout_marginTop="780dp"
-            android:textSize="9sp"
+            android:layout_marginTop="800dp"
+            android:textSize="13sp"
             android:text="All uploaded documents must be less than 2 MB in size, and in pdf, doc, docx, xls, xlsx, jpg, jpeg and png format" />
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="190dp"
-            android:layout_height="50dp"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
             android:contentDescription="Click on program for more details"
             android:background="@drawable/button_bg2"
-            android:layout_marginTop="820dp"
+            android:layout_marginTop="880dp"
             android:layout_marginStart="180dp"/>
 
         <TextView
@@ -199,7 +208,7 @@
             android:textAlignment="center"
             android:textColor="#ffff"
             android:textSize="25sp"
-            android:layout_marginTop="820dp"
-            android:layout_marginStart="180dp"/>
+            android:layout_marginTop="890dp"
+            android:layout_marginStart="230dp"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

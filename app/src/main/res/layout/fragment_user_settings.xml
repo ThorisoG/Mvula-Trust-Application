@@ -27,9 +27,9 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="190dp"
             android:layout_marginTop="79dp"
-            android:layout_marginEnd="100dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="1dp"
             android:text="Settings"
             android:textColor="@color/white"
@@ -237,7 +237,7 @@
             android:layout_marginTop="3dp">
 
             <ImageView
-                android:id="@+id/feedback"
+                android:id="@+id/privacy"
                 android:layout_width="40dp"
                 android:layout_height="60dp"
                 android:padding="2dp"
@@ -249,7 +249,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="50dp"
-                android:text="Send Feedback"
+                android:text="Privacy And Security"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -275,19 +275,18 @@
             android:layout_marginTop="3dp">
 
             <ImageView
-                android:id="@+id/feedback1"
+                android:id="@+id/help"
                 android:layout_width="40dp"
                 android:layout_height="60dp"
                 android:padding="2dp"
-                android:rotation="-37"
-                app:srcCompat="@drawable/send_icon" />
+                app:srcCompat="@drawable/help_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="50dp"
-                android:text="Send Feedback"
+                android:text="Help And Support"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -317,15 +316,14 @@
                 android:layout_width="40dp"
                 android:layout_height="60dp"
                 android:padding="2dp"
-                android:rotation="-37"
-                app:srcCompat="@drawable/send_icon" />
+                app:srcCompat="@drawable/help_outline_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="50dp"
-                android:text="Send Feedback"
+                android:text="About"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 android:textStyle="bold" />
