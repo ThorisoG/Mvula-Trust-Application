@@ -14,7 +14,9 @@ class BottomFragment1 : BottomSheetDialogFragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_bottom_payment_sheet,container,false)
+        val views = inflater.inflate(R.layout.fragment_bottom_payment_sheeet2,container,false)
         return view
+        return  views
 
     }
 }

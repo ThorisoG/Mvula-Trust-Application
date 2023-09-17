@@ -15,11 +15,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [BottomPaymentSheet.newInstance] factory method to
+ * Use the [bottom_payment_sheeet2.newInstance] factory method to
  * create an instance of this fragment.
  */
-//class BottomPaymentSheet : Fragment() {
-    class BottomPaymentSheet : BottomSheetDialogFragment() {
+class bottom_payment_sheeet2 : BottomSheetDialogFragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,7 +35,9 @@ private const val ARG_PARAM2 = "param2"
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_bottom_payment_sheet, container, false)
+        // Inflate the layout for this fragment
+        //return inflater.inflate(R.layout.fragment_bottom_payment_sheeet2, container, false)
+        val view = inflater.inflate(R.layout.fragment_bottom_payment_sheeet2, container, false)
 
         // Retrieve the amount from the arguments
         val amount = arguments?.getString("amount")
@@ -47,17 +48,6 @@ private const val ARG_PARAM2 = "param2"
         return view
     }
 
-    fun updateAmount(amount: String) {
-        val amount1 = view?.findViewById<TextView>(R.id.textView1)
-        val amount2 = view?.findViewById<TextView>(R.id.textView2)
-        val amount3 = view?.findViewById<TextView>(R.id.textView3)
-        val amount4 = view?.findViewById<TextView>(R.id.textView4)
-        amount1?.text = amount
-        amount2?.text = amount
-        amount3?.text = amount
-        amount4?.text = amount
-        }
-
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -65,12 +55,12 @@ private const val ARG_PARAM2 = "param2"
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment BottomPaymentSheet.
+         * @return A new instance of fragment bottom_payment_sheeet2.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            BottomPaymentSheet().apply {
+            bottom_payment_sheeet2().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

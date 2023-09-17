@@ -10,7 +10,7 @@
         android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/white"
+        android:background="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -24,42 +24,79 @@
             android:layout_marginEnd="200dp"
             android:layout_marginBottom="10dp"
             android:text="Payment Details"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout1">
+
+        <TextView
+            android:id="@+id/textView00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="150dp"
+            android:layout_marginBottom="20dp"
+            android:text="Payment Method"
+            android:background="#00000000"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="-500dp"
+            android:layout_marginEnd="-81dp"
+            android:layout_toEndOf="@+id/textView00"
+            android:src="@drawable/cards" />
+
+    </RelativeLayout>
+
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusableInTouchMode="true"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout1">
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="75dp"
             android:text="Amount"
             android:textColor="@color/black"
-            android:textSize="25sp"
-            android:layout_marginLeft="45dp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/amountTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="395dp"
+            android:layout_marginLeft="300dp"
             android:layout_marginTop="-30dp"
-            android:textSize="25dp"/>
+            android:textSize="25dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="35dp"
             android:text="Card number*"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="35dp"/>
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/userName"
@@ -78,18 +115,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="15dp"
             android:text="Card holder*"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="15dp"/>
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/idnum"
             android:layout_width="450dp"
             android:layout_height="55dp"
             android:layout_marginLeft="70dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="0dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="0dp"
             android:background="@drawable/shape_background"
@@ -101,20 +138,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="15dp"
             android:text="Expiring Date*"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="15dp"/>
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/cellno"
-            android:layout_width="450dp"
+            android:layout_width="150dp"
             android:layout_height="55dp"
             android:layout_marginLeft="70dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:layout_marginRight="15dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="0dp"
             android:background="@drawable/shape_background"
             android:hint="MM/YY"
             android:inputType="number"
@@ -124,18 +161,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="270dp"
+            android:layout_marginTop="-80dp"
             android:text="CVC*"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="15dp"/>
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/email"
-            android:layout_width="450dp"
+            android:layout_width="150dp"
             android:layout_height="55dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="270dp"
+            android:layout_marginTop="0dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/shape_background"
@@ -143,7 +180,18 @@
             android:inputType="textEmailAddress"
             android:padding="15dp"
             android:textSize="20sp" />
-
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pay"
+        android:textSize="18sp"
+        android:background="@color/blue"
+        android:layout_marginTop="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
