@@ -43,4 +43,13 @@ class LoginPage : AppCompatActivity() {
         })
     }
 
+    //This is temporary will add things later should the features work //
+    fun AdminBeta(view: View)
+    {
+        // Create an Intent to open SecondActivity//
+        val intent = Intent(this, AdminSplashScreen::class.java)
+        // Start the SecondActivity
+        startActivity(intent)
+    }
+
 }

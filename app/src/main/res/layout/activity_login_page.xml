@@ -105,7 +105,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="26dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="#4E525B"
                 android:contentDescription="Click here to login"
@@ -130,7 +130,8 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginEnd="-2dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="4dp"
                 android:padding="15dp"
                 android:text="Forgot Password"
                 android:textSize="23sp"
@@ -155,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="280dp"
+                android:layout_marginStart="288dp"
                 android:layout_marginTop="90dp"
                 android:padding="15dp"
                 android:text="Sign up"
@@ -163,6 +164,13 @@
                 android:textStyle="bold" />
 
         </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="124dp"
+            android:onClick="AdminBeta"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/accounts_icon" />
 
     </LinearLayout>
 

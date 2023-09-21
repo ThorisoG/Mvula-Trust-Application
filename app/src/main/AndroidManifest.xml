@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,26 +15,36 @@
         android:theme="@style/Theme.MvulaTrustMobileApp"
         tools:targetApi="31">
         <activity
+            android:name=".IncomingVolunteers"
+            android:exported="false" />
+        <activity
+            android:name=".IncomingDonations"
+            android:exported="false" />
+        <activity
+            android:name=".UserDelete"
+            android:exported="false" />
+        <activity
+            android:name=".AdminDashboard"
+            android:exported="false" />
+        <activity
             android:name=".AdminSplashScreen"
             android:exported="false" />
         <activity
             android:name=".RegistrationSuccessWindow"
-            android:exported="false" />
-<!--        /*<activity-->
-<!--            android:name=".User_homescreen"-->
-<!--            android:exported="false" />-->
+            android:exported="false" /> <!-- /*<activity -->
+        <!-- android:name=".User_homescreen" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".SignUp"
             android:exported="false" />
         <activity
             android:name=".LoginPage"
-            android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".SignUp_Page"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".LoginIn"-->
-<!--            android:exported="false" />-->
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".SignUp_Page" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".LoginIn" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".Program5"
             android:exported="false" />
@@ -54,16 +66,12 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
-
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>
