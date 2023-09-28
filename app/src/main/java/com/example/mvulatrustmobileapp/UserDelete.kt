@@ -9,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 
 class UserDelete : AppCompatActivity(), AdapterView.OnItemClickListener {
 
@@ -46,26 +47,65 @@ class UserDelete : AppCompatActivity(), AdapterView.OnItemClickListener {
         Toast.makeText(applicationContext, "Clicked by $email", Toast.LENGTH_LONG).show()
     }
 
-    fun DeleteUser(view: View)
-    {
+    private fun showDeleteConfirmationDialog(email: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirm Deletion")
+            .setMessage("Are you sure you want to delete the user $email?")
+            .setPositiveButton("Yes") { _, _ ->
+                // User clicked "Yes", proceed with deletion
+                deleteUser(email)
+            }
+            .setNegativeButton("No") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
+    fun DeleteUser(view: View) {
         val selectedPosition = listView.checkedItemPosition
         if (selectedPosition != AdapterView.INVALID_POSITION) {
             val email = listView.getItemAtPosition(selectedPosition).toString()
-            val success = databaseHelper.deleteUser(email)
 
-            if (success) {
-                Toast.makeText(applicationContext, "User $email deleted", Toast.LENGTH_SHORT).show()
-                // Refresh the list after deletion if needed
-                val listArray: ArrayList<String> = setByListView()
-                val arrayAdapter: ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, listArray)
-                listView.adapter = arrayAdapter
-            } else {
-                Toast.makeText(applicationContext, "Error deleting user", Toast.LENGTH_SHORT).show()
-            }
+            showDeleteConfirmationDialog(email)
         } else {
             Toast.makeText(applicationContext, "No user selected", Toast.LENGTH_SHORT).show()
         }
     }
+
+   // fun DeleteUser(view: View)
+   // {
+    //    val selectedPosition = listView.checkedItemPosition
+    //    if (selectedPosition != AdapterView.INVALID_POSITION) {
+     //       val email = listView.getItemAtPosition(selectedPosition).toString()
+       //     val success = databaseHelper.deleteUser(email)
+
+      //      if (success) {
+      //          Toast.makeText(applicationContext, "User $email deleted", Toast.LENGTH_SHORT).show()
+      ///          // Refresh the list after deletion if needed
+      //          val listArray: ArrayList<String> = setByListView()
+     //           val arrayAdapter: ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, listArray)
+     ////           listView.adapter = arrayAdapter
+     //       } else {
+     //           Toast.makeText(applicationContext, "Error deleting user", Toast.LENGTH_SHORT).show()
+     //       }
+     //   } else {
+    //        Toast.makeText(applicationContext, "No user selected", Toast.LENGTH_SHORT).show()
+    //    }
+    //}
+
+      private fun deleteUser(email: String) {
+          val success = databaseHelper.deleteUser(email)
+
+          if (success) {
+              Toast.makeText(applicationContext, "User $email deleted", Toast.LENGTH_SHORT).show()
+
+              // Refresh the list after deletion if needed
+              val listArray: ArrayList<String> = setByListView()
+              val arrayAdapter: ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, listArray)
+              listView.adapter = arrayAdapter
+          } else {
+              Toast.makeText(applicationContext, "Error deleting user", Toast.LENGTH_SHORT).show()
+          }
+      }
 
     fun BackPrev(view: View)
     {

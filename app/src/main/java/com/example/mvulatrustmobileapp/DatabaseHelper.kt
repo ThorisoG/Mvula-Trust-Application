@@ -23,11 +23,14 @@ class DatabaseHelper(context: Context?) :
         MyDatabase.execSQL("INSERT into Volunteer (Vname, Vidnum, Phonenum, Email, HomeAddress, Program, Qualification, VolunteerStatus) VALUES ('Dex', '00023445523', '0814893034', 'Jack@gmail.com', '10 jojo street mashville', 'Water Resource Management', 'Degree', 'Pending')")
         MyDatabase.execSQL("INSERT into Volunteer (Vname, Vidnum, Phonenum, Email, HomeAddress, Program, Qualification, VolunteerStatus) VALUES ('Maggy', '00023445523', '0814893034', 'Jack@gmail.com', '10 jojo street mashville', 'Water Resource Management', 'Degree', 'Pending')")
         MyDatabase.execSQL("INSERT into Volunteer (Vname, Vidnum, Phonenum, Email, HomeAddress, Program, Qualification, VolunteerStatus) VALUES ('Josh', '00023445523', '0814893034', 'Jack@gmail.com', '10 jojo street mashville', 'Water Resource Management', 'Degree', 'Pending')")
+
         MyDatabase.execSQL("create table Donations(Donname TEXT,Amount Double)")
         MyDatabase.execSQL("Insert into Donations(Donname,Amount) Values('Jack',1200)")
         MyDatabase.execSQL("Insert into Donations(Donname,Amount) Values('Maggy',200)")
         MyDatabase.execSQL("Insert into Donations(Donname,Amount) Values('Zoey',1320)")
         MyDatabase.execSQL("Insert into Donations(Donname,Amount) Values('Dory',700)")
+
+
     }
 
     override fun onUpgrade(MyDatabase: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -89,6 +92,43 @@ class DatabaseHelper(context: Context?) :
         val result = MyDatabase.update("Volunteer", contentValues, "Vname = ?", arrayOf(Vname))
         return result > 0
     }
+    //This Function its to display the sum of the Total Donatiosn
+    fun getTotalDonationAmount(): Double {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT SUM(Amount) FROM Donations", null)
+
+        var totalAmount = 0.0
+
+        if (cursor.moveToFirst()) {
+            totalAmount = cursor.getDouble(0)
+        }
+
+        cursor.close()
+        db.close()
+
+        return totalAmount
+    }
+    //This Function its to display the donation and donation amount to the List//
+    fun getAllDonations(): List<String> {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("select * from Donations;", null)
+
+        val donationsList = mutableListOf<String>()
+
+        while (cursor.moveToNext()) {
+            val donatorName = cursor.getString(cursor.getColumnIndex("Donname"))
+            val amount = cursor.getDouble(cursor.getColumnIndex("Amount"))
+            donationsList.add("$donatorName: $amount")
+        }
+
+        cursor.close()
+        db.close()
+
+        return donationsList
+    }
+
+
+
     companion object {
         const val databaseName = "Sign.db"
     }

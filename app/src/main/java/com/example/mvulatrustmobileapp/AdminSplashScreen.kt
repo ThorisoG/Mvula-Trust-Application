@@ -16,7 +16,7 @@ class AdminSplashScreen : AppCompatActivity() {
         Handler().postDelayed({
             //the Adminlogin is where is the intent where you want to go//
             val intent = Intent(this,
-                AdminDashboard::class.java)
+                AdministrationMenu::class.java)
             startActivity(intent)
             finish()
         }, AdminSplashtimeout)

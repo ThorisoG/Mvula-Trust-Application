@@ -18,17 +18,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="BackPrev"
-        android:text="Back"
-        app:layout_constraintBottom_toTopOf="@+id/UserList"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Delete"
-        app:layout_constraintVertical_bias="1.0" />
-
     <TextView
         android:id="@+id/Delete"
         android:layout_width="wrap_content"
