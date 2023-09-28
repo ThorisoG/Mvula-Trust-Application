@@ -12,15 +12,19 @@
         android:layout_width="380dp"
         android:layout_height="151dp"
         android:src="@drawable/logo"
-        android:layout_marginTop="110dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="450dp"
-        android:layout_height="336dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="-80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:textSize="20sp"
+            android:textSize="19sp"
             android:textColor="@color/black"
             android:text="The Mvula Trust was established in 1993, six months before the first democratic elections ended the apartheid era in South Africa" />
 
@@ -61,6 +65,18 @@
             android:textSize="20sp"
             android:textColor="@color/black"
             android:text="The Trust was initially conceived as a four year project, whose future would depend on its performance in the early years and on anticipated future needs. The aim was to alleviate the critical situation in the 1990s by setting up a fast and effective mechanism for funding community-driven water and sanitation projects." />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="19sp"
+            android:layout_marginTop="130dp"
+            android:textColor="@color/black"
+            android:text="Read More About Us: https://themvulatrust.org.za/"
+            android:autoLink="web"/>
+
     </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

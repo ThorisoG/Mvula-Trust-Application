@@ -1,11 +1,16 @@
 package com.example.mvulatrustmobileapp
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 // TODO: Rename parameter arguments, choose names that match
@@ -45,7 +50,38 @@ class bottom_payment_sheeet2 : BottomSheetDialogFragment() {
         // Update the amount text view
         val amountTextView = view.findViewById<TextView>(R.id.amountTextView)
         amountTextView?.text = amount
+
+        val payButton = view.findViewById<Button>(R.id.pay)
+        payButton.setOnClickListener {
+            showLoadingDialog()
+            // Add your payment processing logic here...
+        }
         return view
+
+    }
+
+    private fun showLoadingDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.loading_dialog, null)
+        val progressBar = dialogView.findViewById<ProgressBar>(R.id.progressBar)
+        val statusTextView = dialogView.findViewById<TextView>(R.id.statusTextView)
+
+        builder.setView(dialogView)
+        builder.setCancelable(false)
+        val dialog = builder.create()
+        dialog.show()
+
+        // Simulate payment processing (You can replace this with your actual payment logic)
+        Handler(Looper.getMainLooper()).postDelayed({
+            // Update the dialog to show "Payment Complete" and a tick
+            progressBar.visibility = View.INVISIBLE
+            statusTextView.text = "Payment Complete ✓"
+
+            // Dismiss the dialog after a delay (you can adjust the delay as needed)
+            Handler(Looper.getMainLooper()).postDelayed({
+                dialog.dismiss()
+            }, 1000)  // 1000ms delay (1 second)
+        }, 3000)  // Simulate payment processing for 3000ms (3 seconds)
     }
 
     companion object {
