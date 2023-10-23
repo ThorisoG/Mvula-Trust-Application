@@ -15,8 +15,10 @@ class DatabaseHelper(context: Context?) :
         //thori section of the code//
         //Priority HIGH//
         //The tables are here but the main issue is that it doesn't create the tables for some odd reason please check it out//
-        MyDatabase.execSQL("create Table Administration(adminEmail TEXT primary key,adminPassword TEXT)")
-        MyDatabase.execSQL("Insert into Administration(adminEmail,adminPassword) VALUES('Admin101@mvula.com','admin101')")
+        MyDatabase.execSQL("create Table Administration(adminEmail TEXT primary key,adminPassword TEXT,AccountStatus TEXT)")
+        MyDatabase.execSQL("Insert into Administration(adminEmail, adminPassword, AccountStatus) VALUES('Admin101@mvula.com', 'admin101', 'Activated')")
+        MyDatabase.execSQL("Insert into Administration(adminEmail, adminPassword, AccountStatus) VALUES('Admin200@mvula.com', 'admin200', 'Activated')")
+        MyDatabase.execSQL("Insert into Administration(adminEmail, adminPassword, AccountStatus) VALUES('Admin102@mvula.com', 'admin102', 'Deactivated')")
 
         MyDatabase.execSQL("create Table Volunteer(Vname TEXT primary key,Vidnum TEXT,Phonenum TEXT,Email TEXT,HomeAddress TEXT,Program TEXT,Qualification TEXT,VolunteerStatus TEXT)")
         MyDatabase.execSQL("INSERT into Volunteer (Vname, Vidnum, Phonenum, Email, HomeAddress, Program, Qualification, VolunteerStatus) VALUES ('Thoriso', '00023445523', '0814893034', 'Jack@gmail.com', '10 jojo street mashville', 'Water Resource Management', 'Degree', 'Pending')")
@@ -126,8 +128,111 @@ class DatabaseHelper(context: Context?) :
 
         return donationsList
     }
+    //This Function its to Activate and Deactivate the selected AdminAccount//
+    fun getAdmins(): List<List<String>> {
+        val db = this.readableDatabase
+        val adminsList = mutableListOf<List<String>>()
 
+        val cursor = db.rawQuery("Select * from Administration where AccountStatus='Activated'", null)
 
+        while (cursor.moveToNext()) {
+            val email = cursor.getString(cursor.getColumnIndex("adminEmail"))
+            //val password = cursor.getString(cursor.getColumnIndex("adminPassword"))
+            val accountStatus = cursor.getString(cursor.getColumnIndex("AccountStatus"))
+            val adminDetails = listOf(email, accountStatus)
+            //val adminDetails = listOf(email, password, accountStatus)
+            adminsList.add(adminDetails)
+        }
+
+        cursor.close()
+        db.close()
+        return adminsList
+    }
+    fun deactivateAdmin(email: String): Boolean {
+        val db = this.writableDatabase
+        val contentValues = ContentValues().apply {
+            put("AccountStatus", "Deactivated")
+        }
+        val result = db.update("Administration", contentValues, "adminEmail = ?", arrayOf(email))
+        db.close()
+        return result > 0
+    }
+
+    fun getDeactivatedAdmins(): List<List<String>> {
+        val db = this.readableDatabase
+        val adminsList = mutableListOf<List<String>>()
+
+        val cursor = db.rawQuery("Select * from Administration where AccountStatus='Deactivated'", null)
+
+        while (cursor.moveToNext()) {
+            val email = cursor.getString(cursor.getColumnIndex("adminEmail"))
+            val password = cursor.getString(cursor.getColumnIndex("adminPassword"))
+            val accountStatus = cursor.getString(cursor.getColumnIndex("AccountStatus"))
+
+            val adminDetails = listOf(email, password, accountStatus)
+            adminsList.add(adminDetails)
+        }
+
+        cursor.close()
+        db.close()
+
+        return adminsList
+    }
+
+    fun activateAdmin(email: String): Boolean {
+        val db = this.writableDatabase
+        val contentValues = ContentValues().apply {
+            put("AccountStatus", "Activated")
+        }
+        val result = db.update("Administration", contentValues, "adminEmail = ?", arrayOf(email))
+        db.close()
+        return result > 0
+    }
+    //letting the Admin login//
+    fun checkAdminLogin(email: String, password: String): Boolean {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery(
+            "Select * from Administration where adminEmail = ? and adminPassword = ? and AccountStatus = 'Activated'",
+            arrayOf(email, password)
+        )
+        return cursor.count > 0
+    }
+    //Verifying the validity of the Admins Account//
+    fun getAdminDeactivationStatus(email: String): Boolean {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("Select * from Administration where adminEmail = ? and AccountStatus = 'Deactivated'", arrayOf(email))
+        return cursor.count > 0
+    }
+    //Notification System//
+    fun getNewRegistrationsCount(): Int {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT COUNT(*) FROM allusers", null)
+        cursor.moveToFirst()
+        val count = cursor.getInt(0)
+        cursor.close()
+        db.close()
+        return count
+    }
+
+    fun getNewVolunteersCount(): Int {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT COUNT(*) FROM Volunteer WHERE VolunteerStatus='Pending'", null)
+        cursor.moveToFirst()
+        val count = cursor.getInt(0)
+        cursor.close()
+        db.close()
+        return count
+    }
+
+    fun getNewDonationsCount(): Int {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT COUNT(*) FROM Donations", null)
+        cursor.moveToFirst()
+        val count = cursor.getInt(0)
+        cursor.close()
+        db.close()
+        return count
+    }
 
     companion object {
         const val databaseName = "Sign.db"

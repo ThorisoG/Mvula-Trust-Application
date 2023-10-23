@@ -17,6 +17,14 @@ class UserAccountSection : AppCompatActivity() {
             val intent = Intent(this, UserDelete::class.java)
             startActivity(intent)
         }
+
+        val manageAdmin = findViewById<ImageView>(R.id.imageView16)
+        manageAdmin.setOnClickListener{
+            val intent = Intent(this, AccountManagement::class.java)
+            startActivity(intent)
+        }
+
+
         //This is for when the user wants to Logout//
         val Logout = findViewById<ImageView>(R.id.imageView18)
         Logout.setOnClickListener {

@@ -34,10 +34,12 @@
         android:layout_width="165dp"
         android:layout_height="182dp"
         android:layout_marginTop="92dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView26"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/deleteexistinguser" />
 
     <TextView
@@ -58,10 +60,12 @@
         android:layout_width="162dp"
         android:layout_height="182dp"
         android:layout_marginTop="92dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView26"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/admindeprovision" />
 
     <TextView
@@ -86,4 +90,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="381dp"
+        android:layout_height="368dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView31"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12"
+        app:srcCompat="@drawable/work_in_progress" />
 </androidx.constraintlayout.widget.ConstraintLayout>

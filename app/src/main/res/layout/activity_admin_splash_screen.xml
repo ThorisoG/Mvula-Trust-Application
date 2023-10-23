@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="384dp"
-        android:layout_height="85dp"
+        android:layout_width="386dp"
+        android:layout_height="94dp"
         android:text="Administration Portal\nBeta"
         android:textAlignment="center"
         android:textSize="34sp"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13"
-        app:layout_constraintVertical_bias="0.088"
+        app:layout_constraintVertical_bias="0.015"
         app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
