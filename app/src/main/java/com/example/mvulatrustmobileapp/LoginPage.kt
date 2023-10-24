@@ -3,6 +3,7 @@ package com.example.mvulatrustmobileapp
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mvulatrustmobileapp.databinding.ActivityLoginPageBinding
@@ -51,5 +52,8 @@ class LoginPage : AppCompatActivity() {
         // Start the SecondActivity
         startActivity(intent)
     }
-
+    override fun onBackPressed() {
+        // Preventing the user From Accessing other pages or potentially breaking the app//
+        Toast.makeText(this, "Hey, you can't go back at this stage", Toast.LENGTH_SHORT).show()
+    }
 }

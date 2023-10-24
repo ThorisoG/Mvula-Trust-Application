@@ -1,5 +1,6 @@
 package com.example.mvulatrustmobileapp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -24,6 +25,13 @@ class AdminLogin : AppCompatActivity() {
 
         if (dbHelper.checkAdminLogin(email, password)) {
             // If login is successful, start the next activity
+
+            //Making this accessible to the new page//
+            val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.putString("email", email)
+            editor.apply()
+
             val intent = Intent(this, AdministrationMenu::class.java)
             startActivity(intent)
             finish() // Finish the current activity to prevent going back to login screen
@@ -41,5 +49,15 @@ class AdminLogin : AppCompatActivity() {
                 Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+    override fun onBackPressed() {
+        // Preventing the user From Accessing other pages or potentially breaking the app//
+        Toast.makeText(this, "Hey, you can't go back at this stage", Toast.LENGTH_SHORT).show()
+    }
+
+    fun Prev(view: View)
+    {
+        val intent = Intent(this, LoginPage::class.java)
+        startActivity(intent)
     }
 }
