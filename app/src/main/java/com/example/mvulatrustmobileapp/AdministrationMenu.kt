@@ -187,4 +187,8 @@ class AdministrationMenu : AppCompatActivity() {
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
+    override fun onBackPressed() {
+        // Preventing the user From Accessing other pages or potentially breaking the app//
+        Toast.makeText(this, "Hey, you can't go back at this stage", Toast.LENGTH_SHORT).show()
+    }
 }

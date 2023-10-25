@@ -234,6 +234,17 @@ class DatabaseHelper(context: Context?) :
         return count
     }
 
+    //Letting the administrator Update their Password//
+    fun updateAdminPassword(email: String, newPassword: String): Boolean {
+        val db = this.writableDatabase
+        val contentValues = ContentValues().apply {
+            put("adminPassword", newPassword)
+        }
+        val result = db.update("Administration", contentValues, "adminEmail = ?", arrayOf(email))
+        db.close()
+        return result > 0
+    }
+
     companion object {
         const val databaseName = "Sign.db"
     }
