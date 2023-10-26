@@ -2,18 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="600dp"
     android:layout_height="match_parent"
     android:background="#ececec"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".Contact_us">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="411dp"
+        android:layout_width="800dp"
         android:layout_height="wrap_content"
         android:layout_margin="0dp"
-        android:layout_marginStart="0dp"
         android:layout_marginBottom="90dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,53 +22,66 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="800dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
+            android:layout_marginEnd="100dp"
             android:background="#00355E"
             android:elevation="15dp"
             android:gravity="center"
             android:padding="10dp"
             android:text="Contact Us"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/userName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="450dp"
+            android:layout_height="70dp"
             android:layout_margin="15dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/shape_background"
-            android:hint="Full Name:"
+            android:hint="First Name:"
             android:inputType="textPersonName"
             android:padding="15dp"
             android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="23sp" />
 
         <EditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:id="@+id/lastname"
+            android:layout_width="450dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/shape_background"
+            android:hint="Last Name: "
+            android:inputType="textPersonName"
+            android:padding="15dp"
+            android:textSize="23sp"/>
+
+        <EditText
+            android:id="@+id/emailAddress"
+            android:layout_width="450dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/shape_background"
             android:hint="Email Address: "
-            android:inputType="textPersonName"
+            android:inputType="textEmailAddress"
             android:padding="15dp"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="23sp" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/cellnum"
+            android:layout_width="450dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="15dp"
@@ -77,8 +90,7 @@
             android:hint="Phone Number: "
             android:inputType="phone"
             android:padding="15dp"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="23sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -90,12 +102,12 @@
             android:padding="15dp"
             android:text="Message"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="23sp"
             android:textStyle="bold" />
 
         <EditText
-            android:layout_width="383dp"
-            android:layout_height="150dp"
+            android:layout_width="450dp"
+            android:layout_height="180dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
@@ -103,34 +115,61 @@
             android:background="@drawable/shape_background"
             android:hint="Your message to us"
             android:inputType="textPersonName"
+            android:textSize="23sp"
             android:padding="15dp" />
-
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/viewbtn"
+    <ImageButton
+        android:id="@+id/submitbtn"
         android:layout_width="169dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:layout_marginTop="-10dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="-80dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/button_bg2"
-        android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         app:layout_constraintVertical_bias="0.566" />
 
-    <Button
+    <ImageButton
         android:id="@+id/cancelbtn"
         android:layout_width="169dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="-40dp"
+        android:layout_marginStart="-60dp"
         android:background="@drawable/button_bg2"
-        android:text="Cancel"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/viewbtn"
+        app:layout_constraintEnd_toStartOf="@+id/submitbtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Cancel"
+        android:textAlignment="center"
+        android:textColor="#ffff"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/submitbtn"
+        app:layout_constraintStart_toStartOf="@+id/submitbtn"
+        app:layout_constraintTop_toTopOf="@+id/submitbtn" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Submit"
+        android:textAlignment="center"
+        android:textColor="#ffff"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/cancelbtn"
+        app:layout_constraintEnd_toEndOf="@+id/cancelbtn"
+        app:layout_constraintStart_toStartOf="@+id/cancelbtn"
+        app:layout_constraintTop_toTopOf="@+id/cancelbtn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bottom_payment_sheeet2">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout2"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout2"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="200dp"
+            android:layout_marginBottom="10dp"
+            android:text="Payment Details"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout1">
+
+        <TextView
+            android:id="@+id/textView00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="150dp"
+            android:layout_marginBottom="20dp"
+            android:text="Payment Method"
+            android:background="#00000000"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="-500dp"
+            android:layout_marginEnd="-81dp"
+            android:layout_toEndOf="@+id/textView00"
+            android:src="@drawable/paypal" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
+        app:layout_constraintVertical_bias="0.0">
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_marginLeft="140dp" />
+
+    <TextView
+        android:id="@+id/amountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_marginLeft="280dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout3"
+        tools:layout_editor_absoluteX="0dp">
+
+        <!--name-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="25dp"
+            android:text="First Name"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/firstName"
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/shape_background"
+            android:hint="John"
+            android:inputType="textPersonName"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <!--surname-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="330dp"
+            android:layout_marginTop="-75dp"
+            android:text="Last Name"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/surName"
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="330dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/shape_background"
+            android:hint="Doe"
+            android:inputType="textPersonName"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <!--card no-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="10dp"
+            android:text="Card number*"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/CardNo"
+            android:layout_width="450dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/shape_background"
+            android:hint="1234 1234 1234 1234"
+            android:inputType="number"
+            android:maxLength="16"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <!--exp date-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="10dp"
+            android:text="Expiring Date"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/expiration"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/shape_background"
+            android:hint="MM/YY"
+            android:inputType="date"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+        <!--cvc-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="-80dp"
+            android:text="CVC"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/cvcNo"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/shape_background"
+            android:hint="CVC"
+            android:inputType="number"
+            android:maxLength="3"
+            android:padding="15dp"
+            android:textSize="20sp" />
+        <!--country-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="10dp"
+            android:text="Country"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/country"
+            android:layout_width="450dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/shape_background"
+            android:hint="South Africa"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+        <!--state/province-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="10dp"
+            android:text="State / Province"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/province"
+            android:layout_width="450dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/shape_background"
+            android:hint="Gauteng"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+        <!--street address-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="10dp"
+            android:text="Street Address"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="450dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/shape_background"
+            android:hint="11 Cassino road"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+        <!--city-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="10dp"
+            android:text="City"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/shape_background"
+            android:hint="Johannesburg"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+        <!--zip-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="340dp"
+            android:layout_marginTop="-80dp"
+            android:text="ZIP"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/zip"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="340dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/shape_background"
+            android:hint="123"
+            android:inputType="number"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/pay"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Pay"
+            android:textSize="18sp"
+            android:background="@color/blue" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,44 +36,42 @@ class User_home : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user_home, container, false)
 
-                val rootView = inflater.inflate(R.layout.fragment_user_home, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_user_home, container, false)
 
-                val button1 = rootView.findViewById<ImageButton>(R.id.program1)
-                val button2 = rootView.findViewById<ImageButton>(R.id.program2)
-                val button3 = rootView.findViewById<ImageButton>(R.id.program3)
-                val button4 = rootView.findViewById<ImageButton>(R.id.program4)
-                val button5 = rootView.findViewById<ImageButton>(R.id.program5)
+        val program1 = rootView.findViewById<ImageButton>(R.id.program1)
+        val program2 = rootView.findViewById<ImageButton>(R.id.program2)
+        val program3 = rootView.findViewById<ImageButton>(R.id.program3)
+        val program4 = rootView.findViewById<ImageButton>(R.id.program4)
+        val program5 = rootView.findViewById<ImageButton>(R.id.program5)
 
-                button1.setOnClickListener {
-                    val intent = Intent(requireContext(), Program1::class.java)
-                    startActivity(intent)
-                }
+        program1.setOnClickListener {
+            val intent = Intent(requireContext(), Program1::class.java)
+            startActivity(intent)
+        }
 
-                button2.setOnClickListener {
-                    val intent = Intent(requireContext(), Program2::class.java)
-                    startActivity(intent)
-                }
+        program2.setOnClickListener {
+            val intent = Intent(requireContext(), Program2::class.java)
+            startActivity(intent)
+        }
 
-                button3.setOnClickListener {
-                    val intent = Intent(requireContext(), Program3::class.java)
-                    startActivity(intent)
-                }
+        program3.setOnClickListener {
+            val intent = Intent(requireContext(), Program3::class.java)
+            startActivity(intent)
+        }
 
-                button4.setOnClickListener {
-                    val intent = Intent(requireContext(), Program4::class.java)
-                    startActivity(intent)
-                }
+        program4.setOnClickListener {
+            val intent = Intent(requireContext(), Program4::class.java)
+            startActivity(intent)
+        }
 
-                button5.setOnClickListener {
-                    val intent = Intent(requireContext(), Program5::class.java)
-                    startActivity(intent)
-                }
-
+        program5.setOnClickListener {
+            val intent = Intent(requireContext(), Program5::class.java)
+            startActivity(intent)
+        }
                 return rootView
             }
+
 
 
     companion object {

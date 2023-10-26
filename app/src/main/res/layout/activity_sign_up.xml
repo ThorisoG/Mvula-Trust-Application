@@ -16,8 +16,10 @@
 
     <ImageView
         android:id="@+id/imageView11"
-        android:layout_width="75dp"
-        android:layout_height="45dp"
+        android:layout_width="176dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,11 +30,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="8dp"
-        android:text="Sign Up"
+        android:text="Create an \nAccount"
         android:textColor="@android:color/white"
-        android:textSize="30sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.151"
@@ -51,10 +53,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
+            android:layout_marginTop="90dp"
             android:backgroundTint="@android:color/transparent"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:padding="15dp"
+            android:textSize="25sp"
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white" />
 
@@ -74,6 +78,7 @@
             android:backgroundTint="@android:color/transparent"
             android:hint="Password"
             android:inputType="textPassword"
+            android:textSize="25sp"
             android:padding="15dp"
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white" />
@@ -85,6 +90,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="30dp"
             android:background="#B1B1B1" />
+
         <EditText
             android:id="@+id/confirmPassword"
             android:layout_width="match_parent"
@@ -95,6 +101,7 @@
             android:hint="Confirm Password"
             android:inputType="textPassword"
             android:padding="15dp"
+            android:textSize="25sp"
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white" />
 
@@ -122,6 +129,7 @@
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="#4E525B"
                 android:elevation="0dp"
+                android:contentDescription="Click here to signup"
                 android:src="@drawable/round_arrow_forward_24"
                 android:tint="@color/white"
                 app:elevation="0dp"
@@ -142,23 +150,26 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginEnd="19dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="180dp"
                 android:padding="15dp"
                 android:text="Login"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textColor="#00355E"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/accountxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
+                android:layout_marginStart="15dp"
                 android:layout_marginEnd="80dp"
                 android:padding="15dp"
                 android:text="Already have an account?"
                 android:textColor="@android:color/black"
-                android:textSize="15sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>

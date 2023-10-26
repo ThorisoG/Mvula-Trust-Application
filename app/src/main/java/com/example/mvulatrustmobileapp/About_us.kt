@@ -1,10 +1,14 @@
 package com.example.mvulatrustmobileapp
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +38,19 @@ class About_us : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_about_us, container, false)
+        //return inflater.inflate(R.layout.fragment_about_us, container, false)
+
+        val rootView: View = inflater.inflate(R.layout.fragment_about_us, container, false)
+
+        val textView21 = rootView.findViewById<TextView>(R.id.textView21)
+        textView21.setOnClickListener {
+            val url = "https://themvulatrust.org.za/"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
+        return rootView
     }
 
     companion object {

@@ -30,7 +30,7 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         if(savedInstanceState == null){
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, User_settings()).commit()
+                .replace(R.id.fragment_container, User_home()).commit()
             navigationView.setCheckedItem(R.id.nav_home)
         }
     }
@@ -43,8 +43,6 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 .replace(R.id.fragment_container, Donation()).commit()
             R.id.nav_volunteers -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, Volunteer_form()).commit()
-            R.id.nav_gallery -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, Gallery()).commit()
             R.id.nav_settings -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, User_settings()).commit()
             R.id.nav_about -> supportFragmentManager.beginTransaction()

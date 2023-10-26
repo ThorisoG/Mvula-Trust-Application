@@ -3,6 +3,7 @@ package com.example.mvulatrustmobileapp
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mvulatrustmobileapp.databinding.ActivityLoginPageBinding
@@ -29,7 +30,7 @@ class LoginPage : AppCompatActivity() {
                     databaseHelper!!.checkEmailandPassword(email, password)
                 if (checkCredentials) {
                     Toast.makeText(this@LoginPage, "Login successfully", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(applicationContext, MainActivity::class.java)
+                    val intent = Intent(applicationContext, MainActivity2::class.java)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@LoginPage, "Oops invalid Credentials", Toast.LENGTH_SHORT)
@@ -43,4 +44,16 @@ class LoginPage : AppCompatActivity() {
         })
     }
 
+    //This is temporary will add things later should the features work //
+    fun AdminBeta(view: View)
+    {
+        // Create an Intent to open SecondActivity//
+        val intent = Intent(this, AdminSplashScreen::class.java)
+        // Start the SecondActivity
+        startActivity(intent)
+    }
+    override fun onBackPressed() {
+        // Preventing the user From Accessing other pages or potentially breaking the app//
+        Toast.makeText(this, "Hey, you can't go back at this stage", Toast.LENGTH_SHORT).show()
+    }
 }
