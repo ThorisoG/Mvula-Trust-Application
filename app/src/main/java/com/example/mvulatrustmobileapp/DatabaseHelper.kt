@@ -245,6 +245,34 @@ class DatabaseHelper(context: Context?) :
         return result > 0
     }
 
+    //Letting the user Be able to Apply for volunteer applications//
+    fun insertVolunteerData(
+        name: String,
+        idNum: String,
+        phoneNum: String,
+        email: String,
+        address: String,
+        program: String,
+        qualification: String,
+        volunteerStatus: String
+    ): Boolean {
+        val MyDatabase = this.writableDatabase
+        val contentValues = ContentValues().apply {
+            put("Vname", name)
+            put("Vidnum", idNum)
+            put("Phonenum", phoneNum)
+            put("Email", email)
+            put("HomeAddress", address)
+            put("Program", program)
+            put("Qualification", qualification)
+            put("VolunteerStatus", volunteerStatus)
+        }
+        val result = MyDatabase.insert("Volunteer", null, contentValues)
+        MyDatabase.close()
+        return result != -1L
+    }
+
+
     companion object {
         const val databaseName = "Sign.db"
     }

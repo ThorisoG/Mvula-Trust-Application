@@ -11,7 +11,10 @@ import android.widget.AutoCompleteTextView
 import android.widget.ImageButton
 import android.widget.Toast
 import android.app.Activity
+import android.app.AlertDialog
 import android.net.Uri
+import android.widget.EditText
+import android.widget.ImageView
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -42,6 +45,40 @@ class Volunteer_form : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //Enabling the User to Donate to the Administrator//
+        val submitApplicationButton = view.findViewById<ImageView>(R.id.imageButton)
+
+        submitApplicationButton.setOnClickListener {
+            val name = view.findViewById<EditText>(R.id.userName).text.toString()
+            val idNum = view.findViewById<EditText>(R.id.idnum).text.toString()
+            val phoneNum = view.findViewById<EditText>(R.id.cellno).text.toString()
+            val email = view.findViewById<EditText>(R.id.email).text.toString()
+            val address = view.findViewById<EditText>(R.id.address).text.toString()
+            val program = view.findViewById<AutoCompleteTextView>(R.id.auto_complete1).text.toString()
+            val qualification = view.findViewById<AutoCompleteTextView>(R.id.auto_complete2).text.toString()
+            val volunteerStatus = "Pending" // Assuming all new entries start as "Pending"
+
+            val dbHelper = DatabaseHelper(requireContext())
+
+            AlertDialog.Builder(requireContext())
+                .setTitle("Confirm Submission")
+                .setMessage("Do you want to submit this volunteer application?")
+                .setPositiveButton(android.R.string.yes) { _, _ ->
+                    // User clicked "Yes", proceed with application submission
+                    val success = dbHelper.insertVolunteerData(name, idNum, phoneNum, email, address, program, qualification, volunteerStatus)
+
+                    if (success) {
+                        Toast.makeText(requireContext(), "Volunteer data inserted successfully", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(requireContext(), "Failed to insert volunteer data", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show()
+        }
+
+
         val items = listOf(
             "Water Resource Management",
             "Training and Advocacy",
@@ -49,6 +86,7 @@ class Volunteer_form : Fragment() {
             "Local Government Support",
             "Infrastructure Creation and Property Development"
         )
+
 
         val autoComplete1: AutoCompleteTextView =
             view.findViewById(R.id.auto_complete1) // Use a different ID
