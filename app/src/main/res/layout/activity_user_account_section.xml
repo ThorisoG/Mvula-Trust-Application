@@ -31,8 +31,8 @@
 
     <ImageView
         android:id="@+id/imageView12"
-        android:layout_width="165dp"
-        android:layout_height="182dp"
+        android:layout_width="156dp"
+        android:layout_height="146dp"
         android:layout_marginTop="92dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,12 +57,12 @@
 
     <ImageView
         android:id="@+id/imageView16"
-        android:layout_width="162dp"
-        android:layout_height="182dp"
+        android:layout_width="148dp"
+        android:layout_height="141dp"
         android:layout_marginTop="92dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.887"
+        app:layout_constraintHorizontal_bias="0.855"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView26"
         app:layout_constraintVertical_bias="0.0"
@@ -93,11 +93,37 @@
 
     <ImageView
         android:id="@+id/imageView19"
-        android:layout_width="381dp"
-        android:layout_height="368dp"
+        android:layout_width="317dp"
+        android:layout_height="112dp"
         app:layout_constraintBottom_toTopOf="@+id/textView31"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12"
+        app:layout_constraintTop_toBottomOf="@+id/imageView20"
+        app:layout_constraintVertical_bias="0.282"
         app:srcCompat="@drawable/work_in_progress" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Change Password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="157dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView35"
+        app:layout_constraintVertical_bias="0.022"
+        app:srcCompat="@drawable/security" />
 </androidx.constraintlayout.widget.ConstraintLayout>

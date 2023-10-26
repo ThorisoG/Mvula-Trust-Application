@@ -1,11 +1,13 @@
 package com.example.mvulatrustmobileapp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 
 class AdminDashboard : AppCompatActivity() {
     // Define variables for UI elements
@@ -15,6 +17,23 @@ class AdminDashboard : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_dashboard)
+
+        // Retrieve the email from SharedPreferences
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val email = sharedPreferences.getString("email", null)
+
+        // Check if email is null or empty
+        if (email.isNullOrEmpty()) {
+            // Redirect to login page
+            showToast("Email is null or empty, redirecting to login page")
+            redirectToLoginPage()
+            return // Return to prevent further execution
+        }
+        else
+        {
+            showToast("Email is not null or empty")
+        }
+
 
         // Connect UI elements to variables
         viewAllUsersButton = findViewById(R.id.viewAllUsersButton)
@@ -34,18 +53,12 @@ class AdminDashboard : AppCompatActivity() {
             usersTextView.text = usersStringBuilder.toString()
         }
     }
-
-    //Deleting the selected user from the system/ database//
-    fun Delete(view: View)
-    {
-        val intent = Intent(this, UserDelete::class.java)
+    private fun redirectToLoginPage() {
+        val intent = Intent(this, AdminLogin::class.java)
         startActivity(intent)
+        showToast("Logged out, redirecting to login page")
     }
-
-    //Going to the volunteers page//
-    fun Volunteers(view: View)
-    {
-        val intent = Intent(this, IncomingVolunteers::class.java)
-        startActivity(intent)
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

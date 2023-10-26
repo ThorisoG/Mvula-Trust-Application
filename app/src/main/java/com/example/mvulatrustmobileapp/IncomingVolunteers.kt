@@ -1,5 +1,6 @@
 package com.example.mvulatrustmobileapp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,6 +20,22 @@ class IncomingVolunteers : AppCompatActivity(),AdapterView.OnItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_incoming_volunteers)
+
+        // Retrieve the email from SharedPreferences
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val email = sharedPreferences.getString("email", null)
+
+        // Check if email is null or empty
+        if (email.isNullOrEmpty()) {
+            // Redirect to login page
+            showToast("Email is null or empty, redirecting to login page")
+            redirectToLoginPage()
+            return // Return to prevent further execution
+        }
+        else
+        {
+            showToast("Email is not null or empty")
+        }
 
         databaseHelper = DatabaseHelper(this)
         listView = findViewById(R.id.volunteersListView)
@@ -165,5 +182,14 @@ class IncomingVolunteers : AppCompatActivity(),AdapterView.OnItemClickListener {
 
         val dialog = builder.create()
         dialog.show()
+    }
+
+    private fun redirectToLoginPage() {
+        val intent = Intent(this, AdminLogin::class.java)
+        startActivity(intent)
+        showToast("Logged out, redirecting to login page")
+    }
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

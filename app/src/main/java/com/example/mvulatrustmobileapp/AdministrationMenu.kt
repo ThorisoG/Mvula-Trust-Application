@@ -9,6 +9,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.NotificationCompat
 
@@ -20,8 +21,23 @@ class AdministrationMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_administration_menu)
 
-        showBetaPhaseDialog()
+        // Retrieve the email from SharedPreferences
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val email = sharedPreferences.getString("email", null)
 
+        // Check if email is null or empty
+        if (email.isNullOrEmpty()) {
+            // Redirect to login page
+            showToast("Email is null or empty, redirecting to login page")
+            redirectToLoginPage()
+            return // Return to prevent further execution
+        }
+        else
+        {
+            showToast("Email is not null or empty, redirecting to login page")
+        }
+
+        showBetaPhaseDialog()
         val registrations = findViewById<ImageView>(R.id.registrations)
         registrations.setOnClickListener {
             // Code to run when imageView1 is clicked
@@ -56,10 +72,7 @@ class AdministrationMenu : AppCompatActivity() {
             showLogoutConfirmationDialog()
         }
 
-
         // Initialize DatabaseHelper
-
-
         var databaseHelper = DatabaseHelper(this)
 
         // Check for new registrations, volunteers, and donations
@@ -106,12 +119,17 @@ class AdministrationMenu : AppCompatActivity() {
 
 
     private fun performLogout() {
-        // Assuming LoginActivity is the name of your login activity
+        // Clear the email from SharedPreferences
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.remove("email")
+        editor.apply()
+
+        showToast("Logged out, redirecting to login page")
+
+        // Redirect to login page and finish current activity
         val intent = Intent(this, LoginPage::class.java)
         startActivity(intent)
-
-        // Finish the current activity to prevent the user from navigating back to it
-        finish()
     }
 
     private fun createNotificationChannel() {
@@ -158,5 +176,19 @@ class AdministrationMenu : AppCompatActivity() {
 
         // Show the notification with a unique ID
         notificationManager.notify(notificationId, builder.build())
+    }
+
+    private fun redirectToLoginPage() {
+        val intent = Intent(this, LoginPage::class.java)
+        startActivity(intent)
+        showToast("Logged out, redirecting to login page")
+        finish() // Finish the current activity
+    }
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+    override fun onBackPressed() {
+        // Preventing the user From Accessing other pages or potentially breaking the app//
+        Toast.makeText(this, "Hey, you can't go back at this stage", Toast.LENGTH_SHORT).show()
     }
 }

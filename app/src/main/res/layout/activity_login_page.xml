@@ -168,8 +168,8 @@
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="124dp"
-            android:onClick="AdminBeta"
             android:layout_height="wrap_content"
+            android:onClick="AdminBeta"
             app:srcCompat="@drawable/accounts_icon" />
 
     </LinearLayout>
