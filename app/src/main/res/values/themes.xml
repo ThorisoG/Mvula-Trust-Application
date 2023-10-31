@@ -1,10 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.MvulaTrustMobileApp" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.MvulaTrustMobileApp" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:itemTextAppearance">@style/CustomMenuText</item>
     </style>
 
     <style name="Theme.MvulaTrustMobileApp" parent="Base.Theme.MvulaTrustMobileApp" />
 
+    <style name="CustomMenuText" parent="android:style/TextAppearance.Widget.IconMenu.Item">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
 </resources>

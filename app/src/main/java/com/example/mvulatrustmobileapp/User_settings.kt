@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.RelativeLayout
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -41,11 +43,18 @@ class User_settings : Fragment() {
 
         val rootView = inflater.inflate(R.layout.fragment_user_settings, container, false)
 
-        val button = rootView.findViewById<ImageButton>(R.id.button)
+        val logout = rootView.findViewById<RelativeLayout>(R.id.relativeLayout7)
 
-        button.setOnClickListener {
+        logout.setOnClickListener {
             val intent = Intent(requireContext(), LoginPage::class.java)
             startActivity(intent)
+        }
+
+        //the floating chat button
+        val chatButton = rootView.findViewById<FloatingActionButton>(R.id.chatbutton)
+        chatButton.setOnClickListener {
+            val intent1 = Intent(requireContext(), MainActivity3::class.java)
+            requireContext().startActivity(intent1)
         }
 
         return rootView
