@@ -34,7 +34,7 @@ class AdminLogin : AppCompatActivity() {
 
             val intent = Intent(this, AdministrationMenu::class.java)
             startActivity(intent)
-            finish() // Finish the current activity to prevent going back to login screen
+            // Finish the current activity to prevent going back to login screen
 
             // Show a toast for successful login
             Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()

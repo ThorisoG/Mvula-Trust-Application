@@ -13,7 +13,6 @@ class DatabaseHelper(context: Context?) :
         MyDatabase.execSQL("create Table allusers(email TEXT primary key, password TEXT)")
 
         //thori section of the code//
-        //Priority HIGH//
         //The tables are here but the main issue is that it doesn't create the tables for some odd reason please check it out//
         MyDatabase.execSQL("create Table Administration(adminEmail TEXT primary key,adminPassword TEXT,AccountStatus TEXT)")
         MyDatabase.execSQL("Insert into Administration(adminEmail, adminPassword, AccountStatus) VALUES('Admin101@mvula.com', 'admin101', 'Activated')")
