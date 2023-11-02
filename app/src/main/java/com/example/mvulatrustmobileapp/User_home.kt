@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.cardview.widget.CardView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,11 +41,11 @@ class User_home : Fragment() {
 
         val rootView = inflater.inflate(R.layout.fragment_user_home, container, false)
 
-        val program1 = rootView.findViewById<ImageButton>(R.id.program1)
-        val program2 = rootView.findViewById<ImageButton>(R.id.program2)
-        val program3 = rootView.findViewById<ImageButton>(R.id.program3)
-        val program4 = rootView.findViewById<ImageButton>(R.id.program4)
-        val program5 = rootView.findViewById<ImageButton>(R.id.program5)
+        val program1 = rootView.findViewById<CardView>(R.id.program1)  //Water Resource Management
+        val program2 = rootView.findViewById<CardView>(R.id.program2) //Training and Advocacy
+        val program3 = rootView.findViewById<CardView>(R.id.program3) //Sustainable Water and Sanitation
+        val program4 = rootView.findViewById<CardView>(R.id.program4) //Local Government Support
+        val program5 = rootView.findViewById<CardView>(R.id.program5) //Infrastructure Creation and Property Development"
 
         program1.setOnClickListener {
             val intent = Intent(requireContext(), Program1::class.java)
@@ -68,6 +70,13 @@ class User_home : Fragment() {
         program5.setOnClickListener {
             val intent = Intent(requireContext(), Program5::class.java)
             startActivity(intent)
+        }
+
+        val chatButton = rootView.findViewById<FloatingActionButton>(R.id.chatbutton)
+        chatButton.setOnClickListener {
+            // Here, you can launch a new activity by creating an Intent for it
+            val intent1 = Intent(requireContext(), MainActivity3::class.java)
+            requireContext().startActivity(intent1)
         }
                 return rootView
             }

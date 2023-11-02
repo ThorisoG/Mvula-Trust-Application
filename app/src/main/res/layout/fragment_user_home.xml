@@ -11,351 +11,381 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="600dp"
-        android:layout_height="130dp"
+        android:layout_height="90dp"
         android:background="#00355E"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:id="@+id/textView20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/notifications"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="18dp"
-            android:layout_marginEnd="40dp"
-            android:text="Hello user"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="66dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/bell"
             android:textColor="@color/white"
             android:textSize="25sp"
             android:textStyle="bold" />
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="600dp"
+        android:layout_height="190dp"
+        android:background="#00355E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+        <TextView
+            android:id="@+id/textView0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="30dp"
+            android:text="Start by exploring our \nPrograms!"
+            android:textColor="@color/white"
+            android:textSize="33sp"
+            android:textStyle="normal" />
+
         <EditText
             android:id="@+id/search"
-            android:layout_width="300dp"
-            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/textView0"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="150dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="2dp"
-            android:background="@drawable/search_bg"
-            android:hint="Search"
-            android:inputType="textPersonName"
-            android:padding="5dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="70dp"
+            android:background="@drawable/edit_bg"
+            android:drawableStart="@drawable/icon_search"
+            android:drawableEnd="@drawable/icons8_mic_50"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint="Search...."
+            android:inputType="text"
+            android:textColor="@color/white"
             android:textColorHint="#D6D1D1"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/imageView17"
-            android:layout_width="30dp"
-            android:layout_height="40dp"
-            android:layout_alignStart="@+id/search"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="4dp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/search_icon" />
+            android:textSize="23sp" />
 
     </RelativeLayout>
 
-    <!--first program-->
-    <TextView
-        android:id="@+id/textView0"
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="650dp"
+        android:layout_height="350dp"
+        android:background="@drawable/small_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout1">
+
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout1">
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/program1"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp">
+
+                        <ImageView
+                            android:id="@+id/imageView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/water_man_1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="145dp"
+                    android:text="Water Resource Management"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/program2"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/advocacy_3"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="145dp"
+                    android:text="Training and Advocacy"
+                    android:layout_marginStart="10dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/program3"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/water_sust_1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="145dp"
+                    android:text="Sustainable Water and Sanitation"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/program4"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp">
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/government_support_1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="145dp"
+                    android:text="Local Government Support"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="-50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/program5"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp">
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/infrastructure_1" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="145dp"
+                    android:text="Infrastructure Creation \nand Property Development"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/chatbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:text="Our Programs"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
-
-    <ImageButton
-        android:id="@+id/program1"
-        android:layout_width="550dp"
-        android:layout_height="140dp"
-        android:background="#00000000"
-        android:layout_marginTop="13dp"
-        android:contentDescription="Click on program for more details"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView0"
-        app:srcCompat="@drawable/button_bg" />
-
-    <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="125dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginStart="-50dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="@+id/program1"
-            app:layout_constraintHorizontal_bias="0.019"
-            app:layout_constraintStart_toStartOf="@+id/program1"
-            app:layout_constraintTop_toTopOf="@+id/program1"
-            app:srcCompat="@drawable/water_man_1" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Water Resource Management"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintEnd_toEndOf="@+id/program1"
-            app:layout_constraintStart_toEndOf="@+id/imageView1"
-            app:layout_constraintTop_toTopOf="@+id/program1" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp"
-            android:text="This programme therefore consists of the key areas of infrastructure creation, maintenance, as well as water quality and demand management."
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/program1"
-            app:layout_constraintEnd_toEndOf="@+id/program1"
-            app:layout_constraintStart_toEndOf="@+id/imageView1" />
-
-        <!--Second program-->
-        <ImageButton
-            android:id="@+id/program2"
-            android:layout_width="550dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="17dp"
-            android:background="#00000000"
-            android:contentDescription="Click on program for more details"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.457"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/program1"
-            app:srcCompat="@drawable/button_bg" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="118dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="420dp"
-            android:layout_marginTop="0dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="@+id/program2"
-            app:layout_constraintEnd_toEndOf="@+id/program2"
-            app:layout_constraintHorizontal_bias="0.034"
-            app:layout_constraintStart_toStartOf="@+id/program2"
-            app:layout_constraintTop_toTopOf="@+id/program2"
-            app:srcCompat="@drawable/advocacy_3" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Training and Advocacy"
-            android:layout_marginStart="40dp"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/program2"
-            app:layout_constraintHorizontal_bias="0.174"
-            app:layout_constraintStart_toStartOf="@+id/program2"
-            app:layout_constraintTop_toTopOf="@+id/program2" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="7dp"
-            android:layout_marginStart="10dp"
-            android:text="The programme aims to strengthen poor communities' resilience to external shocks and train future entrepreneurs in water and sanitation provision."
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/program2"
-            app:layout_constraintEnd_toEndOf="@+id/program2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/program2" />
-
-        <!--third program-->
-        <ImageButton
-            android:id="@+id/program3"
-            android:layout_width="550dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="17dp"
-            android:background="#00000000"
-            android:contentDescription="Click on program for more details"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.542"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/program2"
-            app:srcCompat="@drawable/button_bg" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="118dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="-9dp"
-            android:layout_marginTop="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/program3"
-            app:layout_constraintEnd_toEndOf="@+id/program3"
-            app:layout_constraintHorizontal_bias="0.034"
-            app:layout_constraintStart_toStartOf="@+id/program3"
-            app:layout_constraintTop_toTopOf="@+id/program3"
-            app:srcCompat="@drawable/water_sust_1"
-            android:scaleType="centerCrop"/>
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginStart="-20dp"
-            android:text="Sustainable Water and Sanitation"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/program3"
-            app:layout_constraintHorizontal_bias="0.607"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="@+id/program3" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="214dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="Value and protection of water for the good of all."
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/program3"
-            app:layout_constraintEnd_toEndOf="@+id/program3"
-            app:layout_constraintHorizontal_bias="0.437"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:layout_constraintVertical_bias="0.318" />
-
-        <!--fourth program-->
-        <ImageButton
-            android:id="@+id/program4"
-            android:layout_width="550dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="17dp"
-            android:background="#00000000"
-            android:contentDescription="Click on program for more details"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.542"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/program3"
-            app:srcCompat="@drawable/button_bg" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="118dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="420dp"
-            android:layout_marginTop="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/program4"
-            app:layout_constraintEnd_toEndOf="@+id/program4"
-            app:layout_constraintHorizontal_bias="0.034"
-            app:layout_constraintStart_toStartOf="@+id/program4"
-            app:layout_constraintTop_toTopOf="@+id/program4"
-            app:srcCompat="@drawable/government_support_1"
-            android:scaleType="centerCrop"/>
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="50dp"
-            android:text="Local Government Support"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/program4"
-            app:layout_constraintHorizontal_bias="0.13"
-            app:layout_constraintStart_toStartOf="@+id/program4"
-            app:layout_constraintTop_toTopOf="@+id/program4" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="239dp"
-            android:layout_height="wrap_content"
-            android:text="Assisting municipalities to be developmental by focusing on their mandates."
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:layout_marginStart="70dp"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/program4"
-            app:layout_constraintStart_toStartOf="@+id/program4"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:layout_constraintVertical_bias="0.897" />
-
-        <!--Fifth program-->
-        <ImageButton
-            android:id="@+id/program5"
-            android:layout_width="550dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="17dp"
-            android:background="#00000000"
-            android:contentDescription="Click on program for more details"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.609"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/program4"
-            app:srcCompat="@drawable/button_bg" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="118dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="-9dp"
-            app:layout_constraintBottom_toBottomOf="@+id/program5"
-            app:layout_constraintEnd_toEndOf="@+id/program5"
-            app:layout_constraintHorizontal_bias="0.034"
-            app:layout_constraintStart_toStartOf="@+id/program5"
-            app:layout_constraintTop_toTopOf="@+id/program5"
-            app:srcCompat="@drawable/infrastructure_1"
-            android:scaleType="centerCrop"/>
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginStart="-20dp"
-            android:text="Infrastructure Creation \nand Property Development"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/program5"
-            app:layout_constraintHorizontal_bias="0.619"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
-            app:layout_constraintTop_toTopOf="@+id/program5" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="360dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginStart="16dp"
-            android:text="This strategy provides community involvement through social workshops for project prioritization and planning."
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/program5"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:layout_constraintVertical_bias="1.0" />
+        android:layout_gravity="bottom|end"
+        android:layout_margin="50dp"
+        app:fabSize="normal"
+        android:backgroundTint="@color/blue"
+        app:elevation="6dp"
+        android:src="@drawable/icon_message_2"
+        app:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

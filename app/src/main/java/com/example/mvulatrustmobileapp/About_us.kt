@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -48,6 +49,13 @@ class About_us : Fragment() {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(url)
             startActivity(intent)
+        }
+
+        val chatButton = rootView.findViewById<FloatingActionButton>(R.id.chatbutton)
+        chatButton.setOnClickListener {
+            // Here, you can launch a new activity by creating an Intent for it
+            val intent1 = Intent(requireContext(), MainActivity3::class.java)
+            requireContext().startActivity(intent1)
         }
 
         return rootView
