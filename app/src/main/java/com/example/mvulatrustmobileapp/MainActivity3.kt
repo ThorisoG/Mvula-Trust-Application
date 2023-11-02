@@ -1,95 +1,85 @@
-package com.example.mvulatrustmobileapp;
+package com.example.mvulatrustmobileapp
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import android.os.Bundle
+import android.view.View
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
-import android.annotation.SuppressLint;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
+class MainActivity3 : AppCompatActivity() {
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+    private lateinit var chatsRV: RecyclerView
+    private lateinit var userMsgEdt: EditText
+    private lateinit var sendMsgFAB: FloatingActionButton
+    private val BOT_KEY = "bot"
+    private val USER_KEY = "user"
+    private val chatsModalArrayList = ArrayList<ChatsModal>()
+    private lateinit var chatRVAdapter: ChatRVAdapter
 
-import java.io.IOException;
-import java.util.ArrayList;
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main3)
+        chatsRV = findViewById(R.id.idRVChats)
+        userMsgEdt = findViewById(R.id.idEdtMessage)
+        sendMsgFAB = findViewById(R.id.idFABSend)
+        chatRVAdapter = ChatRVAdapter(chatsModalArrayList, this)
+        val manager = LinearLayoutManager(this)
+        chatsRV.layoutManager = manager
+        chatsRV.adapter = chatRVAdapter
 
-import kotlin.io.LineReader;
-import okhttp3.Request;
-import okio.Timeout;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
-public class MainActivity3 extends AppCompatActivity {
-
-    private RecyclerView chatsRV;
-    private EditText userMsgEdt;
-    private FloatingActionButton sendMsgFAB;
-    private final String BOT_KEY = "bot";
-    private final String USER_KEY = "user";
-    private ArrayList<ChatsModal>chatsModalArrayList;
-    private ChatRVAdapter chatRVAdapter;
-
-    @SuppressLint("WrongViewCast")
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
-        chatsRV = findViewById(R.id.idRVChats);
-        userMsgEdt = findViewById(R.id.idEdtMessage);
-        sendMsgFAB = findViewById(R.id.idFABSend);
-        chatsModalArrayList = new ArrayList<>();
-        chatRVAdapter = new ChatRVAdapter(chatsModalArrayList,this);
-        LinearLayoutManager manager = new LinearLayoutManager(this);
-        chatsRV.setLayoutManager(manager);
-        chatsRV.setAdapter(chatRVAdapter);
-
-        sendMsgFAB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(userMsgEdt.getText().toString().isEmpty()){
-                    Toast.makeText(MainActivity3.this, "Please enter your message", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                getResponse(userMsgEdt.getText().toString());
-                userMsgEdt.setText("");
+        sendMsgFAB.setOnClickListener {
+            if (userMsgEdt.text.toString().isEmpty()) {
+                Toast.makeText(this@MainActivity3, "Please enter your message", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
-        });
-
+            getResponse(userMsgEdt.text.toString())
+            userMsgEdt.text.clear()
+        }
     }
 
-    private void getResponse(String message) {
-        chatsModalArrayList.add(new ChatsModal(message,USER_KEY));
-        chatRVAdapter.notifyDataSetChanged();
-        String url = "http://api.brainshop.ai/get?bid=156541&key=RdjOJWhMeR2JDdOW&uid=[uid]&msg="+message;
-        String BASE_URL = "http://api.brainshop.ai/";
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
-        Call<MsgModal> call = retrofitAPI.getMessage(url);
-        call.enqueue(new Callback<MsgModal>() {
-            @Override
-            public void onResponse(Call<MsgModal> call, Response<MsgModal> response) {
-                if(response.isSuccessful()){
-                    MsgModal modal = response.body();
-                    chatsModalArrayList.add(new ChatsModal(modal.getCnt(),BOT_KEY));
-                    chatRVAdapter.notifyDataSetChanged();
+    private fun getResponse(message: String) {
+        chatsModalArrayList.add(ChatsModal(message, USER_KEY))
+        chatRVAdapter.notifyDataSetChanged()
+        val url = "http://api.brainshop.ai/get?bid=156541&key=RdjOJWhMeR2JDdOW&uid=[uid]&msg=$message"
+        val BASE_URL = "http://api.brainshop.ai/"
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        val retrofitAPI = retrofit.create(RetrofitAPI::class.java)
+        val call = retrofitAPI.getMessage(url)
+        if (call != null) {
+            call.enqueue(object : Callback<MsgModal?> {
+                override fun onResponse(call: Call<MsgModal?>, response: Response<MsgModal?>) {
+                    if (response.isSuccessful) {
+                        val modal = response.body()
+                        if (modal != null) {
+                            chatsModalArrayList.add(ChatsModal(modal.cnt ?: "", BOT_KEY))
+                            chatRVAdapter.notifyDataSetChanged()
+                        } else {
+                            chatsModalArrayList.add(ChatsModal("Received a null response", BOT_KEY))
+                            chatRVAdapter.notifyDataSetChanged()
+                        }
+                    } else {
+                        chatsModalArrayList.add(ChatsModal("Error in response", BOT_KEY))
+                        chatRVAdapter.notifyDataSetChanged()
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<MsgModal> call, Throwable t) {
-                chatsModalArrayList.add(new ChatsModal("Please revert your question",BOT_KEY));
-                chatRVAdapter.notifyDataSetChanged();
-            }
-        });
+                override fun onFailure(call: Call<MsgModal?>, t: Throwable) {
+                    chatsModalArrayList.add(ChatsModal("Please revert your question", BOT_KEY))
+                    chatRVAdapter.notifyDataSetChanged()
+                }
+            })
 
-
+        }
     }
 }

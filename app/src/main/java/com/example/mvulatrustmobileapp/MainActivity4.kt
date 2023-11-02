@@ -1,18 +1,16 @@
-package com.example.mvulatrustmobileapp;
+package com.example.mvulatrustmobileapp
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.GridView;
+import android.os.Bundle
+import android.view.View
+import android.widget.GridView
+import androidx.appcompat.app.AppCompatActivity
 
-public class MainActivity4 extends AppCompatActivity {
-
-    GridView gridView;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main4);
-
-        gridView = (GridView) findViewById(R.id.grid_view);
-        gridView.setAdapter(new ImageAdapter(this));
+class MainActivity4 : AppCompatActivity() {
+    var gridView: GridView? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main4)
+        gridView = findViewById<View>(R.id.grid_view) as GridView
+        gridView!!.adapter = ImageAdapter(this)
     }
 }

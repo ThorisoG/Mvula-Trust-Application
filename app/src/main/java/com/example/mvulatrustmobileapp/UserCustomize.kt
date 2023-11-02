@@ -1,14 +1,11 @@
-package com.example.mvulatrustmobileapp;
+package com.example.mvulatrustmobileapp
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
-import android.os.Bundle;
-
-public class UserCustomize extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_customize);
+class UserCustomize : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_user_customize)
     }
 }
