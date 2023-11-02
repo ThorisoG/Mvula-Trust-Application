@@ -12,38 +12,52 @@
     <RelativeLayout
         android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="140dp"
         android:background="#00355E">
 
         <TextView
             android:id="@+id/textView0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="200dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="15dp"
             android:text="Volunteer Form"
             android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="70dp"
+            android:text="Complete the form below to volunteer with us"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:textStyle="normal" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:orientation="vertical"
         android:focusableInTouchMode="true">
 
         <EditText
             android:id="@+id/userName"
-            android:layout_width="450dp"
+            android:layout_width="460dp"
             android:layout_height="70dp"
-            android:layout_margin="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/shape_background"
             android:hint="Full Name:"
             android:inputType="textPersonName"
@@ -53,12 +67,10 @@
 
         <EditText
             android:id="@+id/idnum"
-            android:layout_width="450dp"
+            android:layout_width="460dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="-10dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/shape_background"
             android:hint="ID Number: "
             android:inputType="number"
@@ -67,12 +79,10 @@
 
         <EditText
             android:id="@+id/cellno"
-            android:layout_width="450dp"
+            android:layout_width="460dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/shape_background"
             android:hint="Phone Number: "
             android:inputType="number"
@@ -81,12 +91,10 @@
 
         <EditText
             android:id="@+id/email"
-            android:layout_width="450dp"
+            android:layout_width="460dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/shape_background"
             android:hint="Email Address: "
             android:inputType="textEmailAddress"
@@ -95,12 +103,10 @@
 
         <EditText
             android:id="@+id/address"
-            android:layout_width="450dp"
+            android:layout_width="460dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/shape_background"
             android:hint="Home Address: "
             android:inputType="textPostalAddress"
@@ -109,8 +115,9 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="450dp"
-            android:layout_height="70dp"
-            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="15dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
             <AutoCompleteTextView
@@ -125,9 +132,10 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="450dp"
+            android:layout_width="460dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="15dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
             <AutoCompleteTextView
@@ -146,7 +154,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="690dp"
+            android:layout_marginTop="740dp"
             android:text="Upload CV"
             android:textSize="19dp"
             android:textColor="@color/black"/>
@@ -157,7 +165,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginStart="120dp"
-            android:layout_marginTop="720dp"
+            android:layout_marginTop="760dp"
             android:background="#00000000"
             android:scaleType="centerCrop"
             android:layout_centerInParent="true"/>
@@ -166,7 +174,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="260dp"
-            android:layout_marginTop="690dp"
+            android:layout_marginTop="740dp"
             android:text="Upload Qualification"
             android:textSize="19dp"
             android:textColor="@color/black"/>
@@ -177,28 +185,19 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginStart="320dp"
-            android:layout_marginTop="720dp"
+            android:layout_marginTop="760dp"
             android:background="#00000000"
             android:scaleType="centerCrop"
             android:layout_centerInParent="true"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="70dp"
-            android:layout_marginTop="800dp"
-            android:textSize="13sp"
-            android:text="All uploaded documents must be less than 2 MB in size, and in pdf, doc, docx, xls, xlsx, jpg, jpeg and png format" />
-
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="180dp"
+            android:layout_width="200dp"
             android:layout_height="60dp"
             android:onClick="Submitappllication"
             android:contentDescription="Click on program for more details"
             android:background="@drawable/button_bg2"
-            android:layout_marginTop="880dp"
+            android:layout_marginTop="850dp"
             android:layout_marginStart="180dp"/>
 
         <TextView
@@ -206,11 +205,24 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:text="Apply"
-            android:textStyle="bold"
+            android:textStyle="normal"
             android:textAlignment="center"
-            android:textColor="#ffff"
+            android:textColor="@color/white"
             android:textSize="25sp"
-            android:layout_marginTop="890dp"
-            android:layout_marginStart="230dp"/>
+            android:layout_marginTop="860dp"
+            android:layout_marginStart="250dp"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/chatbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="50dp"
+        app:fabSize="normal"
+        android:backgroundTint="@color/blue"
+        app:elevation="6dp"
+        android:src="@drawable/icon_message_2"
+        app:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -15,6 +15,7 @@ import android.app.AlertDialog
 import android.net.Uri
 import android.widget.EditText
 import android.widget.ImageView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -135,6 +136,13 @@ class Volunteer_form : Fragment() {
         val uploadButton1 = view.findViewById<ImageButton>(R.id.uploadButton1)
         uploadButton1.setOnClickListener {
             openFileChooser()
+        }
+
+        //the floating chat button
+        val chatButton = view.findViewById<FloatingActionButton>(R.id.chatbutton)
+        chatButton.setOnClickListener {
+            val intent1 = Intent(requireContext(), MainActivity3::class.java)
+            requireContext().startActivity(intent1)
         }
 
         return view

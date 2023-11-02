@@ -52,37 +52,36 @@ class Donation : Fragment() {
         //mastercard
         val cardView5 = view.findViewById<CardView>(R.id.cardview5)
         //paypal
-        val cardView7 = view.findViewById<CardView>(R.id.cardview7)
+        //val cardView6 = view.findViewById<CardView>(R.id.cardview6)
 
                 cardView1.setOnClickListener {
                     // Set the selected amount when cardView1 is clicked
-                    selectedAmount = "R50"
+                    selectedAmount = "R10.00"
                 }
 
                 cardView2.setOnClickListener {
                     // Set the selected amount when cardView2 is clicked
-                    selectedAmount = "R150"
+                    selectedAmount = "R50.00"
                 }
 
                 cardView3.setOnClickListener {
                     // Set the selected amount when cardView3 is clicked
-                    selectedAmount = "R200"
+                    selectedAmount = "R100.00"
                 }
 
                 cardView4.setOnClickListener {
                     // Set the selected amount when cardView4 is clicked
-                    selectedAmount = "R500"
+                    selectedAmount = "R200.00"
                 }
         cardView5.setOnClickListener {
             // Set the selected amount when cardView5 is clicked
             selectedCardView = cardView5
         }
 
-        cardView7.setOnClickListener {
+        /*cardView6.setOnClickListener {
             // Set the selected amount when cardView7 is clicked
-            selectedCardView = cardView7
-        }
-
+            selectedCardView = cardView6
+        }*/
 
         payButton.setOnClickListener {
                         if (selectedAmount != null) {
