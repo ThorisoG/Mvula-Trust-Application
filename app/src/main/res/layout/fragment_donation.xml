@@ -176,7 +176,7 @@
         app:srcCompat="@drawable/button_bg" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/price"
         android:layout_width="252dp"
         android:layout_height="49dp"
         android:layout_margin="20dp"
@@ -190,7 +190,7 @@
         android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.605"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@id/imageView3"
         app:layout_constraintVertical_bias="0.0" />
@@ -240,14 +240,6 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_row="1"
-                    android:layout_column="0"
-                    app:srcCompat="@drawable/mastercard_logo" />
 
             </LinearLayout>
 
@@ -338,6 +330,14 @@
                     app:srcCompat="@drawable/e_wallet_logo" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            app:srcCompat="@drawable/mastercard_logo" />
     </GridLayout>
 
     <ImageButton

@@ -270,6 +270,17 @@ class DatabaseHelper(context: Context?) :
         MyDatabase.close()
         return result != -1L
     }
+    // Allowing the user to insert into the database//
+    fun insertDonation(donname: String, amount: Double): Boolean {
+        val db = this.writableDatabase
+        val contentValues = ContentValues().apply {
+            put("Donname", donname)
+            put("Amount", amount)
+        }
+        val result = db.insert("Donations", null, contentValues)
+        db.close()
+        return result != -1L
+    }
 
 
     companion object {

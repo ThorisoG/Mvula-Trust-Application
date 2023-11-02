@@ -1,5 +1,6 @@
 package com.example.mvulatrustmobileapp
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -31,6 +32,17 @@ class LoginPage : AppCompatActivity() {
                 if (checkCredentials) {
                     Toast.makeText(this@LoginPage, "Login successfully", Toast.LENGTH_SHORT).show()
                     val intent = Intent(applicationContext, MainActivity2::class.java)
+                    //Adding something for the user to be able to have an identity when making donations//
+                    //Making this accessible to the new page//
+                    intent.putExtra("email", email)
+
+                    // Create an instance of Donation fragment and pass the email
+                    //val donationFragment = Donation.newInstance("param1", "param2")
+                    // val bundle = Bundle()
+                    //bundle.putString("email", email)
+                    //donationFragment.arguments = bundle
+                    // Add the Donation fragment to the intent
+                    //supportFragmentManager.beginTransaction().add(donationFragment, "DonationFragment").commit()
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@LoginPage, "Oops invalid Credentials", Toast.LENGTH_SHORT)

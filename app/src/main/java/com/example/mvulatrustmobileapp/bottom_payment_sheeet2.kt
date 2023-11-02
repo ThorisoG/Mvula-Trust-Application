@@ -10,8 +10,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import org.w3c.dom.Text
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -44,20 +46,34 @@ class bottom_payment_sheeet2 : BottomSheetDialogFragment() {
         //return inflater.inflate(R.layout.fragment_bottom_payment_sheeet2, container, false)
         val view = inflater.inflate(R.layout.fragment_bottom_payment_sheeet2, container, false)
 
-        // Retrieve the amount from the arguments
+        // Retrieve the amount from the arguments //
         val amount = arguments?.getString("amount")
+
+
 
         // Update the amount text view
         val amountTextView = view.findViewById<TextView>(R.id.amountTextView)
         amountTextView?.text = amount
 
+        val donatorsname = view.findViewById<TextView>(R.id.firstName)
+
         val payButton = view.findViewById<Button>(R.id.pay)
         payButton.setOnClickListener {
-            showLoadingDialog()
-            // Add your payment processing logic here...
+            //Making the user be able to insert into the database
+            val amount = arguments?.getString("amount")
+
+            // Insert donation into the database
+            val db = DatabaseHelper(requireContext())
+            val donationInserted = db.insertDonation(donatorsname.text.toString(), amount?.toDoubleOrNull() ?: 0.0)
+
+            if (donationInserted) {
+                showLoadingDialog()
+            } else {
+                // Handling insertion failure//
+                Toast.makeText(requireContext(), "Donation Payment Failed", Toast.LENGTH_SHORT).show()
+            }
         }
         return view
-
     }
 
     private fun showLoadingDialog() {
@@ -76,7 +92,6 @@ class bottom_payment_sheeet2 : BottomSheetDialogFragment() {
             // Update the dialog to show "Payment Complete" and a tick
             progressBar.visibility = View.INVISIBLE
             statusTextView.text = "Payment Complete ✓"
-
             // Dismiss the dialog after a delay (you can adjust the delay as needed)
             Handler(Looper.getMainLooper()).postDelayed({
                 dialog.dismiss()
