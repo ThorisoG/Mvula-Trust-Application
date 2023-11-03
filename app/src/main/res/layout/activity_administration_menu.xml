@@ -7,60 +7,6 @@
     android:background="@color/blue"
     tools:context=".AdministrationMenu">
 
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="View Donations Received"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrations"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="View Registered Users"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView29"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Volunteer Applications"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.806"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView29"
-        app:layout_constraintVertical_bias="0.062" />
-
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Manage User Accounts"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.369"
-        app:layout_constraintStart_toEndOf="@+id/textView23"
-        app:layout_constraintTop_toBottomOf="@+id/volunteers"
-        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView13"
@@ -71,7 +17,7 @@
         android:onClick="Logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logout_icon" />
 
@@ -79,94 +25,229 @@
         android:id="@+id/Logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:text="Logout"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/imageView13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="369dp"
+        android:layout_height="681dp"
+        android:background="@color/white"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView13"
+        app:layout_constraintDimensionRatio="H,2:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20"
+        app:layout_constraintVertical_bias="0.064">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/registrations"
+                    android:layout_width="178dp"
+                    android:layout_height="130dp"
+                    app:layout_column="0"
+                    app:layout_row="1"
+                    app:srcCompat="@drawable/recived" />
+
+                <ImageView
+                    android:id="@+id/Donations"
+                    android:layout_width="178dp"
+                    android:layout_height="130dp"
+                    app:layout_column="0"
+                    app:layout_row="3"
+                    app:srcCompat="@drawable/donationreceived" />
+
+                <ImageView
+                    android:id="@+id/volunteers"
+                    android:layout_width="178dp"
+                    android:layout_height="127dp"
+                    app:layout_column="1"
+                    app:layout_row="1"
+                    app:srcCompat="@drawable/organizationvolunteers" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="178dp"
+                    android:layout_height="wrap_content"
+                    android:background="#A8737373"
+                    android:text="View Users"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_column="0"
+                    app:layout_row="0" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="194dp"
+                    android:layout_height="wrap_content"
+                    android:background="#A8737373"
+                    android:text="View Volunteers"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_column="1"
+                    app:layout_row="0" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="178dp"
+                    android:layout_height="wrap_content"
+                    android:text="View Donations"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_column="0"
+                    app:layout_row="2" />
+
+                <TextView
+                    android:id="@+id/textView40"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:text="Deactivate Accounts"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_column="1"
+                    app:layout_row="2" />
+
+                <TextView
+                    android:id="@+id/textView41"
+                    android:layout_width="177dp"
+                    android:layout_height="wrap_content"
+                    android:text="Activate Admin Accounts"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_column="0"
+                    app:layout_row="4" />
+
+                <TextView
+                    android:id="@+id/textView42"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:text="Update Password"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_column="1"
+                    app:layout_row="4" />
+
+
+                <ImageView
+                    android:id="@+id/updatepass"
+                    android:layout_width="178dp"
+                    android:layout_height="130dp"
+                    app:layout_column="1"
+                    app:layout_row="5"
+                    app:srcCompat="@drawable/security" />
+
+                <ImageView
+                    android:id="@+id/imageView32"
+                    android:layout_width="178dp"
+                    android:layout_height="130dp"
+                    app:layout_column="1"
+                    app:layout_row="7"
+                    app:srcCompat="@drawable/info_icon" />
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="176dp"
+                    android:layout_height="wrap_content"
+                    android:text="Info"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_column="1"
+                    app:layout_row="6" />
+
+                <TextView
+                    android:id="@+id/textView43"
+                    android:layout_width="178dp"
+                    android:layout_height="wrap_content"
+                    android:text="In Progress"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_column="0"
+                    app:layout_row="6" />
+
+                <ImageView
+                    android:id="@+id/imageView33"
+                    android:layout_width="178dp"
+                    android:layout_height="130dp"
+                    app:layout_column="0"
+                    app:layout_row="7"
+                    app:srcCompat="@drawable/work_in_progress" />
+
+                <ImageView
+                    android:id="@+id/imageView24"
+                    android:layout_width="178dp"
+                    android:layout_height="130dp"
+                    app:layout_column="0"
+                    app:layout_row="5"
+                    app:srcCompat="@drawable/admindeprovision" />
+
+                <ImageView
+                    android:id="@+id/imageView25"
+                    android:layout_width="178dp"
+                    android:layout_height="130dp"
+                    app:layout_column="1"
+                    app:layout_row="3"
+                    app:srcCompat="@drawable/deleteexistinguser" />
+
+            </androidx.gridlayout.widget.GridLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <ImageView
         android:id="@+id/imageView15"
-
-        android:layout_width="288dp"
-        android:layout_height="145dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        android:layout_width="191dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024"
-        app:srcCompat="@drawable/welcomeback" />
+        app:srcCompat="@drawable/white_logo" />
 
     <ImageView
-        android:id="@+id/Donations"
-        android:layout_width="166dp"
-        android:layout_height="118dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/Logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/donationreceived" />
-
-    <ImageView
-        android:id="@+id/registrations"
-
-        android:layout_width="168dp"
-        android:layout_height="127dp"
+        android:id="@+id/imageView21"
+        android:layout_width="65dp"
+        android:layout_height="43dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21"
-        app:layout_constraintVertical_bias="0.019"
-        app:srcCompat="@drawable/recived" />
-
-    <ImageView
-        android:id="@+id/volunteers"
-        android:layout_width="172dp"
-        android:layout_height="127dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.878"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView25"
-        app:layout_constraintVertical_bias="0.02"
-        app:srcCompat="@drawable/organizationvolunteers" />
-
-    <ImageView
-        android:id="@+id/UserAccounts"
-        android:layout_width="172dp"
-        android:layout_height="119dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/Logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.853"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView27"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/manage" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/notificationbell" />
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Administrators DashBoard"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="12dp"
+        android:text="Welcome Administrator"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15"
-        app:layout_constraintVertical_bias="0.014" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

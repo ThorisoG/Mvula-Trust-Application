@@ -59,11 +59,11 @@ class AdministrationMenu : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val accountuser = findViewById<ImageView>(R.id.UserAccounts)
-        accountuser.setOnClickListener {
-            val intent = Intent(this, UserAccountSection::class.java)
-            startActivity(intent)
-        }
+        //val accountuser = findViewById<ImageView>(R.id.UserAccounts)
+        //accountuser.setOnClickListener {
+            //val intent = Intent(this, UserAccountSection::class.java)
+            //startActivity(intent)
+        //}
 
         //This is for when the user wants to Logout//
         val Logout = findViewById<ImageView>(R.id.imageView13)
