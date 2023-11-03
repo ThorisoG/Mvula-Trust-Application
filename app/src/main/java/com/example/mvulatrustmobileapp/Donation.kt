@@ -1,14 +1,10 @@
 package com.example.mvulatrustmobileapp
 
-import android.annotation.SuppressLint
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 
@@ -33,7 +29,6 @@ class Donation : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -41,11 +36,11 @@ class Donation : Fragment() {
         }
     }
 
-    @SuppressLint("SuspiciousIndentation")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
                 val view = inflater.inflate(R.layout.fragment_donation, container, false)
 
                 val payButton = view.findViewById<ImageButton>(R.id.payButton)
@@ -58,33 +53,26 @@ class Donation : Fragment() {
         val cardView5 = view.findViewById<CardView>(R.id.cardview5)
         //paypal
         val cardView7 = view.findViewById<CardView>(R.id.cardview7)
-        //This is for the amount//
-        val amount = view.findViewById<EditText>(R.id.price)
 
                 cardView1.setOnClickListener {
                     // Set the selected amount when cardView1 is clicked
-                    selectedAmount = "50"
-                    amount.setText(selectedAmount)
+                    selectedAmount = "R50"
                 }
 
                 cardView2.setOnClickListener {
                     // Set the selected amount when cardView2 is clicked
-                    selectedAmount = "150"
-                    amount.setText(selectedAmount)
+                    selectedAmount = "R150"
                 }
 
                 cardView3.setOnClickListener {
                     // Set the selected amount when cardView3 is clicked
-                    selectedAmount = "200"
-                    amount.setText(selectedAmount)
+                    selectedAmount = "R200"
                 }
 
                 cardView4.setOnClickListener {
                     // Set the selected amount when cardView4 is clicked
-                    selectedAmount = "500"
-                    amount.setText(selectedAmount)
+                    selectedAmount = "R500"
                 }
-
         cardView5.setOnClickListener {
             // Set the selected amount when cardView5 is clicked
             selectedCardView = cardView5

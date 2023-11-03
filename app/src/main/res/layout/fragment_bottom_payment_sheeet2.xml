@@ -23,7 +23,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="200dp"
             android:layout_marginBottom="10dp"
-            android:text="Payment Details"
+            android:text="Make Payment"
             android:textColor="@color/white"
             android:textSize="21sp"
             android:textStyle="bold" />
@@ -45,7 +45,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="130dp"
             android:layout_marginEnd="150dp"
             android:layout_marginBottom="20dp"
             android:text="Payment Method"
@@ -60,6 +60,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginStart="-500dp"
             android:layout_marginEnd="-81dp"
+            android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/textView00"
             android:src="@drawable/paypal" />
 
@@ -69,7 +70,7 @@
         android:id="@+id/relativeLayout3"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,9 +100,9 @@
         android:layout_height="wrap_content"
         android:focusableInTouchMode="true"
         android:orientation="vertical"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/relativeLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
         tools:layout_editor_absoluteX="0dp">
 
         <!--name-->
@@ -151,7 +152,7 @@
             android:textColor="@color/black"
             android:textSize="20sp" />
 
-        <!--card no-->
+        <!--card no-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -176,7 +177,7 @@
             android:textColor="@color/black"
             android:textSize="20sp" />
 
-        <!--exp date-->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -200,7 +201,7 @@
             android:padding="15dp"
             android:textSize="20sp" />
 
-        <!--cvc-->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -223,7 +224,7 @@
             android:maxLength="3"
             android:padding="15dp"
             android:textSize="20sp" />
-        <!--country-->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -247,7 +248,7 @@
             android:padding="15dp"
             android:textSize="20sp" />
 
-        <!--state/province-->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -271,7 +272,7 @@
             android:padding="15dp"
             android:textSize="20sp" />
 
-        <!--street address-->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -295,7 +296,7 @@
             android:padding="15dp"
             android:textSize="20sp" />
 
-        <!--city-->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -319,7 +320,7 @@
             android:padding="15dp"
             android:textSize="20sp" />
 
-        <!--zip-->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -340,15 +341,29 @@
             android:inputType="number"
             android:padding="15dp"
             android:textSize="20sp" />
+-->
 
-        <Button
-            android:id="@+id/pay"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="Pay"
-            android:textSize="18sp"
-            android:background="@color/blue" />
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/pay"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/button_bg2"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Donate"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/pay"
+        app:layout_constraintEnd_toEndOf="@+id/pay"
+        app:layout_constraintStart_toStartOf="@+id/pay"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
