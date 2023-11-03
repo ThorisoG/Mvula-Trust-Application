@@ -36,13 +36,6 @@ class LoginPage : AppCompatActivity() {
                     //Making this accessible to the new page//
                     intent.putExtra("email", email)
 
-                    // Create an instance of Donation fragment and pass the email
-                    //val donationFragment = Donation.newInstance("param1", "param2")
-                    // val bundle = Bundle()
-                    //bundle.putString("email", email)
-                    //donationFragment.arguments = bundle
-                    // Add the Donation fragment to the intent
-                    //supportFragmentManager.beginTransaction().add(donationFragment, "DonationFragment").commit()
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@LoginPage, "Oops invalid Credentials", Toast.LENGTH_SHORT)

@@ -61,7 +61,6 @@ class bottom_payment_sheeet2 : BottomSheetDialogFragment() {
         payButton.setOnClickListener {
             //Making the user be able to insert into the database
             val amount = arguments?.getString("amount")
-
             // Insert donation into the database
             val db = DatabaseHelper(requireContext())
             val donationInserted = db.insertDonation(donatorsname.text.toString(), amount?.toDoubleOrNull() ?: 0.0)

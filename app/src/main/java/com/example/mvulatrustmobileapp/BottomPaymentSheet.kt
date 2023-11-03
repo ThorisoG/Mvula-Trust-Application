@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -50,11 +51,21 @@ private const val ARG_PARAM2 = "param2"
         // Update the amount text view
         val amountTextView = view.findViewById<TextView>(R.id.amountTextView)
         amountTextView?.text = amount
+        val donatorsname = view.findViewById<TextView>(R.id.Names)
 
         val payButton = view.findViewById<Button>(R.id.payButton)
         payButton.setOnClickListener {
-            showLoadingDialog()
-            // Add your payment processing logic here...
+            // Insert donation into the database
+            val db = DatabaseHelper(requireContext())
+            val donationInserted = db.insertDonation(donatorsname.text.toString(), amount?.toDoubleOrNull() ?: 0.0)
+
+            if (donationInserted) {
+                //if the user has hand
+                showLoadingDialog()
+            } else {
+                // Handling insertion failure//
+                Toast.makeText(requireContext(), "Donation Payment Failed", Toast.LENGTH_SHORT).show()
+            }
         }
         return view
     }

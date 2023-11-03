@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageButton
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
@@ -51,27 +52,33 @@ class Donation : Fragment() {
                 val cardView4 = view.findViewById<CardView>(R.id.cardview4)
         //mastercard
         val cardView5 = view.findViewById<CardView>(R.id.cardview5)
-        //paypal
+
+        //paypal//
         val cardView7 = view.findViewById<CardView>(R.id.cardview7)
 
+        val amounts  = view.findViewById<EditText>(R.id.username)
                 cardView1.setOnClickListener {
                     // Set the selected amount when cardView1 is clicked
-                    selectedAmount = "R50"
+                    selectedAmount = "50"
+                    amounts.setText(selectedAmount)
                 }
 
                 cardView2.setOnClickListener {
                     // Set the selected amount when cardView2 is clicked
-                    selectedAmount = "R150"
+                    selectedAmount = "150"
+                    amounts.setText(selectedAmount)
                 }
 
                 cardView3.setOnClickListener {
                     // Set the selected amount when cardView3 is clicked
-                    selectedAmount = "R200"
+                    selectedAmount = "200"
+                    amounts.setText(selectedAmount)
                 }
 
                 cardView4.setOnClickListener {
                     // Set the selected amount when cardView4 is clicked
-                    selectedAmount = "R500"
+                    selectedAmount = "500"
+                    amounts.setText(selectedAmount)
                 }
         cardView5.setOnClickListener {
             // Set the selected amount when cardView5 is clicked

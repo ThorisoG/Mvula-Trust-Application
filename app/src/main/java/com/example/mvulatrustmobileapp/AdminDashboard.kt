@@ -47,8 +47,8 @@ class AdminDashboard : AppCompatActivity() {
             val usersStringBuilder = StringBuilder()
             while (usersCursor.moveToNext()) {
                 val email = usersCursor.getString(usersCursor.getColumnIndex("email"))
-                val password = usersCursor.getString(usersCursor.getColumnIndex("password"))
-                usersStringBuilder.append("Email: $email, Password: $password\n")
+                //val password = usersCursor.getString(usersCursor.getColumnIndex("password"))
+                usersStringBuilder.append("Email: $email\n")
             }
             usersTextView.text = usersStringBuilder.toString()
         }
