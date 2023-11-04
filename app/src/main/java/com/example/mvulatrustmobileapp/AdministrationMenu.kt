@@ -5,6 +5,7 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.media.Image
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -59,12 +60,57 @@ class AdministrationMenu : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //val accountuser = findViewById<ImageView>(R.id.UserAccounts)
-        //accountuser.setOnClickListener {
-            //val intent = Intent(this, UserAccountSection::class.java)
-            //startActivity(intent)
-        //}
+        //Added New Features on the menu//
+        val accountuser = findViewById<ImageView>(R.id.imageView25)
+        accountuser.setOnClickListener {
+            val intent = Intent(this, UserDelete::class.java)
+            startActivity(intent)
+        }
 
+        val updatepassword = findViewById<ImageView>(R.id.updatepass)
+        updatepassword.setOnClickListener {
+            val intent = Intent(this, UpdateAdminPassword::class.java)
+            startActivity(intent)
+        }
+
+        val activateaccount  = findViewById<ImageView>(R.id.imageView24)
+        activateaccount.setOnClickListener {
+            val intent = Intent(this, AccountManagement::class.java)
+            startActivity(intent)
+        }
+
+        //this is to show the version number//
+        val version = findViewById<ImageView>(R.id.imageView32)
+        version.setOnClickListener {
+            val versionMessage = "Mvula trust Beta ver 0.2 revision two"
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Version Information")
+                .setMessage(versionMessage)
+                .setPositiveButton("OK") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .show()
+        }
+
+        val notificationBell = findViewById<ImageView>(R.id.Bell)
+        notificationBell.setOnClickListener {
+            val dbhelper = DatabaseHelper(this)
+            val newVolunteersCount = dbhelper.getNewVolunteersCount()
+            val newDonationsCount = dbhelper.getNewDonationsCount()
+            val message = if (newVolunteersCount > 0 || newDonationsCount > 0) {
+                "There are new volunteers received :$newVolunteersCount " +
+                        "\nThere are new Donations received:$newDonationsCount"
+            } else {
+                "Everything's good for now"
+            }
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Notification")
+                .setMessage(message)
+                .setPositiveButton("OK") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .show()
+        }
         //This is for when the user wants to Logout//
         val Logout = findViewById<ImageView>(R.id.imageView13)
         Logout.setOnClickListener {
@@ -74,22 +120,21 @@ class AdministrationMenu : AppCompatActivity() {
 
         // Initialize DatabaseHelper
         var databaseHelper = DatabaseHelper(this)
+        notificationBell.setImageResource(R.drawable.notificationactive)
 
         // Check for new registrations, volunteers, and donations
-        val newRegistrationsCount = databaseHelper.getNewRegistrationsCount()
-        if (newRegistrationsCount > 0) {
-            triggerNotification("$newRegistrationsCount new registrations", 1)
-        }
-
         val newVolunteersCount = databaseHelper.getNewVolunteersCount()
         if (newVolunteersCount > 0) {
+            notificationBell.setImageResource(R.drawable.notificationactive)
             triggerNotification("$newVolunteersCount new volunteer applications", 2)
         }
 
         val newDonationsCount = databaseHelper.getNewDonationsCount()
         if (newDonationsCount > 0) {
+            notificationBell.setImageResource(R.drawable.notificationactive)
             triggerNotification("$newDonationsCount new donations", 3)
         }
+
     }
 
     private fun showLogoutConfirmationDialog() {
@@ -97,9 +142,6 @@ class AdministrationMenu : AppCompatActivity() {
         builder.setTitle("Logout")
             .setMessage("Are you sure you want to logout?")
             .setPositiveButton("Yes") { _, _ ->
-                // Code to run when user clicks "Yes"
-                // For example, you can perform logout here
-                // Example: performLogout()
                 performLogout()
             }
             .setNegativeButton("No") { dialog, _ ->
@@ -126,7 +168,6 @@ class AdministrationMenu : AppCompatActivity() {
         editor.apply()
 
         showToast("Logged out, redirecting to login page")
-
         // Redirect to login page and finish current activity
         val intent = Intent(this, LoginPage::class.java)
         startActivity(intent)
