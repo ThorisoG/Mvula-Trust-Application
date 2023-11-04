@@ -92,6 +92,18 @@ class AdministrationMenu : AppCompatActivity() {
                 .show()
         }
 
+        val newfeature = findViewById<ImageView>(R.id.imageView33)
+        newfeature.setOnClickListener {
+            val versionMessage = "New Features may be Implemented Soon"
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Work in progress")
+                .setMessage(versionMessage)
+                .setPositiveButton("OK") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .show()
+        }
+
         val notificationBell = findViewById<ImageView>(R.id.Bell)
         notificationBell.setOnClickListener {
             val dbhelper = DatabaseHelper(this)
