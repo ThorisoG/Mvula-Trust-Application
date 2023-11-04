@@ -10,6 +10,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.NotificationCompat
@@ -35,8 +36,10 @@ class AdministrationMenu : AppCompatActivity() {
         }
         else
         {
-            showToast("Email is not null or empty, redirecting to login page")
+            showToast("welcome $email")
         }
+        val welcomemessage = findViewById<TextView>(R.id.textView20)
+        welcomemessage.text = "Welcome Administrator $email"
 
         showBetaPhaseDialog()
         val registrations = findViewById<ImageView>(R.id.registrations)

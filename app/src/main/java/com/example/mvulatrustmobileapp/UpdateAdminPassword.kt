@@ -24,10 +24,6 @@ class UpdateAdminPassword : AppCompatActivity() {
             showToast("Email is null or empty, redirecting to login page")
             return // Return to prevent further execution
         }
-        else
-        {
-            showToast("Email is not null or empty")
-        }
         val getEmailTextView = findViewById<TextView>(R.id.getemail)
         // Set the text of the TextView to the email
         getEmailTextView.text = email

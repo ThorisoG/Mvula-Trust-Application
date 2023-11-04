@@ -29,12 +29,6 @@ class AdminDashboard : AppCompatActivity() {
             redirectToLoginPage()
             return // Return to prevent further execution
         }
-        else
-        {
-            showToast("Email is not null or empty")
-        }
-
-
         // Connect UI elements to variables
         viewAllUsersButton = findViewById(R.id.viewAllUsersButton)
         usersTextView = findViewById(R.id.users)

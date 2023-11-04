@@ -22,7 +22,7 @@ class IncomingDonations : AppCompatActivity() {
         // Check if email is null or empty
         if (email.isNullOrEmpty()) {
             // Redirect to login page
-            showToast("Email is null or empty, redirecting to login page")
+            showToast("Login")
             redirectToLoginPage()
             return // Return to prevent further execution
         }

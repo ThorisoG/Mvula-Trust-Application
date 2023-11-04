@@ -44,7 +44,7 @@ class UserDelete : AppCompatActivity(), AdapterView.OnItemClickListener {
     }
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         val email = parent?.getItemAtPosition(position).toString()
-        Toast.makeText(applicationContext, "Clicked by $email", Toast.LENGTH_LONG).show()
+        Toast.makeText(applicationContext, "You selected $email", Toast.LENGTH_LONG).show()
     }
 
     private fun showDeleteConfirmationDialog(email: String) {
@@ -70,33 +70,11 @@ class UserDelete : AppCompatActivity(), AdapterView.OnItemClickListener {
             Toast.makeText(applicationContext, "No user selected", Toast.LENGTH_SHORT).show()
         }
     }
-
-   // fun DeleteUser(view: View)
-   // {
-    //    val selectedPosition = listView.checkedItemPosition
-    //    if (selectedPosition != AdapterView.INVALID_POSITION) {
-     //       val email = listView.getItemAtPosition(selectedPosition).toString()
-       //     val success = databaseHelper.deleteUser(email)
-
-      //      if (success) {
-      //          Toast.makeText(applicationContext, "User $email deleted", Toast.LENGTH_SHORT).show()
-      ///          // Refresh the list after deletion if needed
-      //          val listArray: ArrayList<String> = setByListView()
-     //           val arrayAdapter: ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, listArray)
-     ////           listView.adapter = arrayAdapter
-     //       } else {
-     //           Toast.makeText(applicationContext, "Error deleting user", Toast.LENGTH_SHORT).show()
-     //       }
-     //   } else {
-    //        Toast.makeText(applicationContext, "No user selected", Toast.LENGTH_SHORT).show()
-    //    }
-    //}
-
       private fun deleteUser(email: String) {
           val success = databaseHelper.deleteUser(email)
 
           if (success) {
-              Toast.makeText(applicationContext, "User $email deleted", Toast.LENGTH_SHORT).show()
+              Toast.makeText(applicationContext, "User $email is deleted", Toast.LENGTH_SHORT).show()
 
               // Refresh the list after deletion if needed
               val listArray: ArrayList<String> = setByListView()
@@ -106,10 +84,4 @@ class UserDelete : AppCompatActivity(), AdapterView.OnItemClickListener {
               Toast.makeText(applicationContext, "Error deleting user", Toast.LENGTH_SHORT).show()
           }
       }
-
-    fun BackPrev(view: View)
-    {
-        val intent = Intent(this, AdminDashboard::class.java)
-        startActivity(intent)
-    }
 }

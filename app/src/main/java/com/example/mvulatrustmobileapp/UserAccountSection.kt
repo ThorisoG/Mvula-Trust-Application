@@ -20,14 +20,11 @@ class UserAccountSection : AppCompatActivity() {
         // Check if email is null or empty
         if (email.isNullOrEmpty()) {
             // Redirect to login page
-            showToast("Email is null or empty, redirecting to login page")
+            showToast("Redirecting to login page")
             redirectToLoginPage()
             return // Return to prevent further execution
         }
-        else
-        {
-            showToast("Email is not null or empty")
-        }
+
 
         val deleteuser = findViewById<ImageView>(R.id.imageView12)
         deleteuser.setOnClickListener {

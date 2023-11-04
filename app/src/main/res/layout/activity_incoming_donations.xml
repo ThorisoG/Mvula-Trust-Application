@@ -11,55 +11,96 @@
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
         android:text="View Incoming Donations"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.584"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044" />
+        app:layout_constraintVertical_bias="0.002" />
 
-    <TextView
-        android:id="@+id/DonationSum"
-        android:layout_width="152dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="550dp"
+        android:layout_height="85dp"
+        android:layout_margin="8dp"
+        android:layout_marginBottom="52dp"
+        app:cardBackgroundColor="#A8A8A8"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView36"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toEndOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/textView22"
-        app:layout_constraintVertical_bias="0.069" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="226dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="28dp"
-        android:text="Total donations for 2023 "
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView26">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="52dp"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total donations for 2023 "
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                tools:layout_editor_absoluteX="59dp"
+                tools:layout_editor_absoluteY="131dp" />
+
+            <TextView
+                android:id="@+id/DonationSum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                tools:layout_editor_absoluteX="355dp"
+                tools:layout_editor_absoluteY="131dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <ListView
         android:id="@+id/DonatorsList"
+        android:layout_width="538dp"
+        android:layout_height="592dp"
         android:background="@color/white"
-        android:layout_width="386dp"
-        android:layout_height="524dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
-        app:layout_constraintVertical_bias="0.555" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/white"
+        android:text="Donation History"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/DonatorsList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView26"
+        app:layout_constraintVertical_bias="0.981" />
+
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="207dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22"
+        app:srcCompat="@drawable/cheers" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

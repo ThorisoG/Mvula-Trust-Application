@@ -28,15 +28,10 @@ class IncomingVolunteers : AppCompatActivity(),AdapterView.OnItemClickListener {
         // Check if email is null or empty
         if (email.isNullOrEmpty()) {
             // Redirect to login page
-            showToast("Email is null or empty, redirecting to login page")
+            showToast("Login")
             redirectToLoginPage()
             return // Return to prevent further execution
         }
-        else
-        {
-            showToast("Email is not null or empty")
-        }
-
         databaseHelper = DatabaseHelper(this)
         listView = findViewById(R.id.volunteersListView)
 
@@ -56,20 +51,15 @@ class IncomingVolunteers : AppCompatActivity(),AdapterView.OnItemClickListener {
         while (cursor.moveToNext()) {
             val name = cursor.getString(cursor.getColumnIndex("Vname"))
             val id = cursor.getString(cursor.getColumnIndex("Vidnum"))
-            val phone = cursor.getString(cursor.getColumnIndex("Phonenum"))
-            val email = cursor.getString(cursor.getColumnIndex("Email"))
-            val address = cursor.getString(cursor.getColumnIndex("HomeAddress"))
+            //val phone = cursor.getString(cursor.getColumnIndex("Phonenum"))
+            //val email = cursor.getString(cursor.getColumnIndex("Email"))
+            //val address = cursor.getString(cursor.getColumnIndex("HomeAddress"))
             val program = cursor.getString(cursor.getColumnIndex("Program"))
-            val qualification = cursor.getString(cursor.getColumnIndex("Qualification"))
+            //val qualification = cursor.getString(cursor.getColumnIndex("Qualification"))
 
             val volunteerInfo = """
             Name: $name
-            ID Number: $id
-            Phone Number: $phone
-            Email: $email
-            Address: $address
             Program: $program
-            Qualification: $qualification
         """.trimIndent()
             arrayList.add(volunteerInfo)
         }
@@ -78,26 +68,14 @@ class IncomingVolunteers : AppCompatActivity(),AdapterView.OnItemClickListener {
         return arrayList
     }
 
-    fun Donations(view: View) {
-        val intent = Intent(this, IncomingDonations::class.java)
-        startActivity(intent)
-    }
-
-    fun Back(view: View) {
-        val intent = Intent(this, AdminDashboard::class.java)
-        startActivity(intent)
-    }
-
     private fun getSelectedVname(selectedVolunteer: String): String {
         val cursor = databaseHelper.getPendingVolunteers()
-
         while (cursor.moveToNext()) {
             val name = cursor.getString(cursor.getColumnIndex("Vname"))
             if (selectedVolunteer.contains(name)) {
                 return name
             }
         }
-
         return ""
     }
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
@@ -129,7 +107,7 @@ class IncomingVolunteers : AppCompatActivity(),AdapterView.OnItemClickListener {
         }
 
         // Display Vname in a Toast message
-        Toast.makeText(this, "Selected Vname: $selectedVname", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Volunteer Selected: $selectedVname", Toast.LENGTH_SHORT).show()
 
         // Show the approval dialog with the details
         showApprovalDialog(selectedVname, selectedId, selectedPhone, selectedEmail, selectedAddress, selectedProgram, selectedQualification)
@@ -179,7 +157,6 @@ class IncomingVolunteers : AppCompatActivity(),AdapterView.OnItemClickListener {
         builder.setNeutralButton("No") { _, _ ->
             // Do nothing
         }
-
         val dialog = builder.create()
         dialog.show()
     }

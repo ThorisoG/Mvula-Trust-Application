@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    android:background="@drawable/backgroundui"
     tools:context=".AdministrationMenu">
 
 
@@ -23,28 +23,31 @@
 
     <TextView
         android:id="@+id/Logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="57dp"
+        android:layout_height="19dp"
+        android:layout_marginBottom="4dp"
         android:text="Logout"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="361dp"
-        android:layout_height="608dp"
+        android:layout_width="432dp"
+        android:layout_height="666dp"
         android:background="@color/white"
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView13"
         app:layout_constraintDimensionRatio="H,2:3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView20"
-        app:layout_constraintVertical_bias="0.064">
+        app:layout_constraintVertical_bias="0.656">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -53,13 +56,14 @@
 
             <androidx.gridlayout.widget.GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="642dp"
                 android:visibility="visible"
                 tools:visibility="visible">
 
+
                 <ImageView
                     android:id="@+id/registrations"
-                    android:layout_width="178dp"
+                    android:layout_width="216dp"
                     android:layout_height="130dp"
                     app:layout_column="0"
                     app:layout_row="1"
@@ -67,7 +71,7 @@
 
                 <ImageView
                     android:id="@+id/Donations"
-                    android:layout_width="178dp"
+                    android:layout_width="215dp"
                     android:layout_height="130dp"
                     app:layout_column="0"
                     app:layout_row="3"
@@ -75,7 +79,7 @@
 
                 <ImageView
                     android:id="@+id/volunteers"
-                    android:layout_width="178dp"
+                    android:layout_width="216dp"
                     android:layout_height="127dp"
                     app:layout_column="1"
                     app:layout_row="1"
@@ -83,7 +87,7 @@
 
                 <TextView
                     android:id="@+id/textView23"
-                    android:layout_width="178dp"
+                    android:layout_width="214dp"
                     android:layout_height="wrap_content"
                     android:background="#A8737373"
                     android:text="View Users"
@@ -95,7 +99,7 @@
 
                 <TextView
                     android:id="@+id/textView25"
-                    android:layout_width="194dp"
+                    android:layout_width="217dp"
                     android:layout_height="wrap_content"
                     android:background="#A8737373"
                     android:text="View Volunteers"
@@ -107,7 +111,7 @@
 
                 <TextView
                     android:id="@+id/textView27"
-                    android:layout_width="178dp"
+                    android:layout_width="216dp"
                     android:layout_height="wrap_content"
                     android:text="View Donations"
                     android:textAlignment="center"
@@ -118,7 +122,7 @@
 
                 <TextView
                     android:id="@+id/textView40"
-                    android:layout_width="175dp"
+                    android:layout_width="215dp"
                     android:layout_height="wrap_content"
                     android:text="Deactivate Accounts"
                     android:textAlignment="center"
@@ -129,7 +133,7 @@
 
                 <TextView
                     android:id="@+id/textView41"
-                    android:layout_width="177dp"
+                    android:layout_width="216dp"
                     android:layout_height="wrap_content"
                     android:text="Activate Admin Accounts"
                     android:textAlignment="center"
@@ -140,7 +144,7 @@
 
                 <TextView
                     android:id="@+id/textView42"
-                    android:layout_width="175dp"
+                    android:layout_width="214dp"
                     android:layout_height="wrap_content"
                     android:text="Update Password"
                     android:textAlignment="center"
@@ -152,7 +156,7 @@
 
                 <ImageView
                     android:id="@+id/updatepass"
-                    android:layout_width="178dp"
+                    android:layout_width="214dp"
                     android:layout_height="130dp"
                     app:layout_column="1"
                     app:layout_row="5"
@@ -160,7 +164,7 @@
 
                 <ImageView
                     android:id="@+id/imageView32"
-                    android:layout_width="178dp"
+                    android:layout_width="214dp"
                     android:layout_height="130dp"
                     app:layout_column="1"
                     app:layout_row="7"
@@ -168,7 +172,7 @@
 
                 <TextView
                     android:id="@+id/textView29"
-                    android:layout_width="176dp"
+                    android:layout_width="215dp"
                     android:layout_height="wrap_content"
                     android:text="Info"
                     android:textAlignment="center"
@@ -179,7 +183,7 @@
 
                 <TextView
                     android:id="@+id/textView43"
-                    android:layout_width="178dp"
+                    android:layout_width="216dp"
                     android:layout_height="wrap_content"
                     android:text="In Progress"
                     android:textAlignment="center"
@@ -190,7 +194,7 @@
 
                 <ImageView
                     android:id="@+id/imageView33"
-                    android:layout_width="178dp"
+                    android:layout_width="214dp"
                     android:layout_height="130dp"
                     app:layout_column="0"
                     app:layout_row="7"
@@ -198,7 +202,7 @@
 
                 <ImageView
                     android:id="@+id/imageView24"
-                    android:layout_width="178dp"
+                    android:layout_width="214dp"
                     android:layout_height="130dp"
                     app:layout_column="0"
                     app:layout_row="5"
@@ -206,7 +210,7 @@
 
                 <ImageView
                     android:id="@+id/imageView25"
-                    android:layout_width="178dp"
+                    android:layout_width="215dp"
                     android:layout_height="130dp"
                     app:layout_column="1"
                     app:layout_row="3"
@@ -218,8 +222,8 @@
 
     <ImageView
         android:id="@+id/imageView15"
-        android:layout_width="191dp"
-        android:layout_height="78dp"
+        android:layout_width="192dp"
+        android:layout_height="84dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -231,7 +235,7 @@
         android:layout_width="65dp"
         android:layout_height="43dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/notificationbell" />
@@ -240,10 +244,10 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:text="Welcome Administrator"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
