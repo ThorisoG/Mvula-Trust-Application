@@ -33,5 +33,7 @@ class Program2 : AppCompatActivity() {
                 .replace(R.id.fragment_container, fragment)
                 .commit()
         }
+
+
     }
 }

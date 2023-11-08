@@ -281,7 +281,10 @@ class DatabaseHelper(context: Context?) :
         db.close()
         return result != -1L
     }
-
+    fun getApprovedVolunteers(): Cursor {
+        val MyDatabase = this.writableDatabase
+        return MyDatabase.rawQuery("SELECT * FROM Volunteer WHERE VolunteerStatus='Approved'", null)
+    }
 
     companion object {
         const val databaseName = "Sign.db"
