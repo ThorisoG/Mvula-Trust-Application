@@ -281,10 +281,25 @@ class DatabaseHelper(context: Context?) :
         db.close()
         return result != -1L
     }
-    fun getApprovedVolunteers(): Cursor {
-        val MyDatabase = this.writableDatabase
-        return MyDatabase.rawQuery("SELECT * FROM Volunteer WHERE VolunteerStatus='Approved'", null)
+    fun getApprovedVolunteers(): List<List<String>> {
+        val db = this.readableDatabase
+        val volunteersList = mutableListOf<List<String>>()
+
+        val cursor = db.rawQuery("Select Vname, Program from Volunteer WHERE VolunteerStatus='Approved'", null)
+
+        while (cursor.moveToNext()) {
+            val name = cursor.getString(cursor.getColumnIndex("Vname"))
+            val program = cursor.getString(cursor.getColumnIndex("Program"))
+            val volunteerDetails = listOf(name, program)
+            volunteersList.add(volunteerDetails)
+        }
+
+        cursor.close()
+        db.close()
+
+        return volunteersList
     }
+
 
     companion object {
         const val databaseName = "Sign.db"
