@@ -85,7 +85,7 @@ class AdministrationMenu : AppCompatActivity() {
         //this is to show the version number//
         val version = findViewById<ImageView>(R.id.imageView32)
         version.setOnClickListener {
-            val versionMessage = "Mvula trust Beta ver 0.2 revision two"
+            val versionMessage = "Mvula trust Beta ver 0.3"
             val builder = AlertDialog.Builder(this)
             builder.setTitle("Version Information")
                 .setMessage(versionMessage)
@@ -160,8 +160,8 @@ class AdministrationMenu : AppCompatActivity() {
     }
     private fun showBetaPhaseDialog() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Caution : Beta Phase")
-            .setMessage("Features are in the beta phase and yet to be fully tested.")
+        builder.setTitle("Caution : Beta Phase 3")
+            .setMessage("Features on this application are in phase 3 of the testing phase \n and yet to be fully tested")
             .setPositiveButton("OK") { dialog, _ ->
                 dialog.dismiss()
             }
