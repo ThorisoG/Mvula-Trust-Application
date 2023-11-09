@@ -50,6 +50,13 @@ class User_settings : Fragment() {
             startActivity(intent)
         }
 
+        //To transition to the user settings account
+        val next1 = rootView.findViewById<RelativeLayout>(R.id.next1)
+        next1.setOnClickListener {
+            val intent2 =Intent(requireContext(),UserCustomize::class.java)
+            requireContext().startActivity(intent2)
+        }
+
         //the floating chat button
         val chatButton = rootView.findViewById<FloatingActionButton>(R.id.chatbutton)
         chatButton.setOnClickListener {

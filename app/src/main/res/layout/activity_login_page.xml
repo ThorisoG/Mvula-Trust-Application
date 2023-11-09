@@ -110,6 +110,18 @@
                 app:fabCustomSize="80dp"
                 tools:ignore="RelativeOverlap" />
 
+            <Switch
+                android:id="@+id/theme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/loginbt"
+                android:layout_alignBottom="@+id/loginbt"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="324dp"
+                android:layout_marginBottom="28dp"
+                android:layout_toStartOf="@+id/loginbt"
+                android:text="Switch" />
+
         </RelativeLayout>
 
         <LinearLayout

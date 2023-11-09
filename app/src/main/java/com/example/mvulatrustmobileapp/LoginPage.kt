@@ -1,12 +1,14 @@
 package com.example.mvulatrustmobileapp
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
+import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import com.example.mvulatrustmobileapp.databinding.ActivityLoginPageBinding
 
 class LoginPage : AppCompatActivity() {
@@ -16,6 +18,18 @@ class LoginPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginPageBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
+
+        //DARK MODE TOGGLE
+        val switch : Switch = findViewById(R.id.theme)
+
+        switch.setOnClickListener { buttonView: View ->
+            val isChecked = false
+            if (isChecked){
+                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
+            }else{
+                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
+            }
+        }
 
         databaseHelper = DatabaseHelper(this)
 
