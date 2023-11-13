@@ -13,6 +13,7 @@ import android.widget.Toast
 import android.app.Activity
 import android.app.AlertDialog
 import android.net.Uri
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -47,7 +48,7 @@ class Volunteer_form : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //Enabling the User to Donate to the Administrator//
-        val submitApplicationButton = view.findViewById<ImageView>(R.id.imageButton)
+        val submitApplicationButton = view.findViewById<Button>(R.id.imageButton)
 
         submitApplicationButton.setOnClickListener {
             val name = view.findViewById<EditText>(R.id.userName).text.toString()

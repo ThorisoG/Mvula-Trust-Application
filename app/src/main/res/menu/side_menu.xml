@@ -6,7 +6,7 @@
             android:icon="@drawable/home_icon"
             android:title="Home" />
 
-        <item android:id="@+id/gallery"
+        <item android:id="@+id/nav_gallery"
             android:icon="@drawable/imagegallery"
             android:title="Gallery" />
 
@@ -16,23 +16,19 @@
 
         <item android:id="@+id/nav_volunteers"
             android:icon="@drawable/work_icon"
-            android:title="Volunteer Applications"/>
-
-        <item android:id="@+id/nav_settings"
-            android:icon="@drawable/settings_icon"
-            android:title="Settings"/>
+            android:title="Volunteer Application"/>
 
         <item android:id="@+id/nav_about"
             android:icon="@drawable/information"
             android:title="About Us"/>
 
-        <item android:id="@+id/nav_contact"
-            android:icon="@drawable/work_icon"
-            android:title="Contact Us"/>
+        <item android:id="@+id/nav_chat"
+            android:icon="@drawable/icon_message_2"
+            android:title="Chat"/>
 
-        <item android:id="@+id/logout"
-            android:icon="@drawable/logout_icon"
-            android:title="Logout"/>
+        <item android:id="@+id/nav_settings"
+            android:icon="@drawable/settings_icon"
+            android:title="Settings"/>
 
     </group>
 

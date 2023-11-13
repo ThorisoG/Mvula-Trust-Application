@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.cardview.widget.CardView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -24,6 +26,8 @@ class User_home : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var chatbot: ImageButton
+    private lateinit var gallery: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +50,8 @@ class User_home : Fragment() {
         val program3 = rootView.findViewById<CardView>(R.id.program3) //Sustainable Water and Sanitation
         val program4 = rootView.findViewById<CardView>(R.id.program4) //Local Government Support
         val program5 = rootView.findViewById<CardView>(R.id.program5) //Infrastructure Creation and Property Development"
+        chatbot = rootView.findViewById(R.id.chatbot)
+        gallery = rootView.findViewById(R.id.gallery)
 
         program1.setOnClickListener {
             val intent = Intent(requireContext(), Program1::class.java)
@@ -71,16 +77,18 @@ class User_home : Fragment() {
             val intent = Intent(requireContext(), Program5::class.java)
             startActivity(intent)
         }
-
-        val chatButton = rootView.findViewById<FloatingActionButton>(R.id.chatbutton)
-        chatButton.setOnClickListener {
-            // Here, you can launch a new activity by creating an Intent for it
-            val intent1 = Intent(requireContext(), MainActivity3::class.java)
-            requireContext().startActivity(intent1)
+        chatbot.setOnClickListener {
+            val intent = Intent(requireContext(), MainActivity3::class.java)
+            startActivity(intent)
         }
-                return rootView
-            }
 
+        gallery.setOnClickListener {
+            val intent = Intent(requireContext(), MainActivity4::class.java)
+            startActivity(intent)
+        }
+
+        return rootView
+            }
 
 
     companion object {

@@ -1,5 +1,6 @@
 package com.example.mvulatrustmobileapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -34,13 +35,6 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 .replace(R.id.fragment_container, User_home()).commit()
             navigationView.setCheckedItem(R.id.nav_home)
         }
-        /*val logoutButton = findViewById<View>(R.id.Logout)
-
-        logoutButton.setOnClickListener {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, LoginPage())
-                .commit()
-        }*/
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -55,11 +49,7 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 .replace(R.id.fragment_container, User_settings()).commit()
             R.id.nav_about -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, About_us()).commit()
-            R.id.nav_contact -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, Contact_us()).commit()
-            R.id.nav_contact -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, Contact_us()).commit()
-
+   
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

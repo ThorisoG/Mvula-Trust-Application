@@ -31,7 +31,9 @@ class DatabaseHelper(context: Context?) :
         MyDatabase.execSQL("Insert into Donations(Donname,Amount) Values('Zoey',1320)")
         MyDatabase.execSQL("Insert into Donations(Donname,Amount) Values('Dory',700)")
 
-
+        MyDatabase.execSQL("Create table Messages(Firstname TEXT primary key, Lastname TEXT, PhoneNum TEXT, Email TEXT, Message TEXT, MessageStatus TEXT)")
+        MyDatabase.execSQL("Insert into Messages(Firstname, Lastname, PhoneNum, Email, Message, MessageStatus) Values('Zoe','Smith','0625664216' ,'Zoe.Smith211@gmail.com','Requesting direct admin/hr email address for communication purposes.','Pending')")
+        MyDatabase.execSQL("Insert into Messages(Firstname, Lastname, PhoneNum, Email, Message, MessageStatus) Values('Seth','McMillan','0812133765','McMillanSeth05@gmail.com','Requesting company bank account details for a larger sum of donation.','Pending')")
     }
 
     override fun onUpgrade(MyDatabase: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -39,6 +41,7 @@ class DatabaseHelper(context: Context?) :
         MyDatabase.execSQL("drop Table if exists Administration")
         MyDatabase.execSQL("drop table if exists Volunteer")
         MyDatabase.execSQL("drop Table if exists Donations")
+        MyDatabase.execSQL("drop Table if exists Messages")
         onCreate(MyDatabase)
     }
 
@@ -300,7 +303,27 @@ class DatabaseHelper(context: Context?) :
         return volunteersList
     }
 
-
+    fun insertMessage(
+        Firstname: String,
+        Lastname: String,
+        PhoneNum : String,
+        Email: String,
+        Message: String,
+        MessageStatus: String
+    ): Boolean {
+        val MyDatabase = this.writableDatabase
+        val contentValues = ContentValues().apply {
+            put("Firstname", Firstname)
+            put("Lastname", Lastname)
+            put("PhoneNum", PhoneNum)
+            put("Email", Email)
+            put("Message", Message)
+            put("MessageStatus", MessageStatus)
+        }
+        val result = MyDatabase.insert("Messages", null, contentValues)
+        MyDatabase.close()
+        return result != -1L
+    }
     companion object {
         const val databaseName = "Sign.db"
     }

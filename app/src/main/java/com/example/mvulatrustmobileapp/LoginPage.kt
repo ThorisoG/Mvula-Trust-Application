@@ -61,6 +61,7 @@ class LoginPage : AppCompatActivity() {
             val intent = Intent(this@LoginPage, SignUp::class.java)
             startActivity(intent)
         })
+
     }
 
     //This is temporary will add things later should the features work //
