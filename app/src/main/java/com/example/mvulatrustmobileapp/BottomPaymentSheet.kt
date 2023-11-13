@@ -104,6 +104,7 @@ private const val ARG_PARAM2 = "param2"
             }, 1000)  // 1000ms delay (1 second)
         }, 3000)  // Simulate payment processing for 3000ms (3 seconds)
     }
+
     companion object {
         /**
          * Use this factory method to create a new instance of

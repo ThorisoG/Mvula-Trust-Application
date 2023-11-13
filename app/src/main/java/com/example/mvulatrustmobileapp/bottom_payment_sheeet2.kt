@@ -50,7 +50,6 @@ class bottom_payment_sheeet2 : BottomSheetDialogFragment() {
         val amount = arguments?.getString("amount")
 
 
-
         // Update the amount text view
         val amountTextView = view.findViewById<TextView>(R.id.amountTextView)
         amountTextView?.text = amount
