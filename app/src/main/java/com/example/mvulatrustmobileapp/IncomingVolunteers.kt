@@ -50,7 +50,7 @@ class IncomingVolunteers : AppCompatActivity(),AdapterView.OnItemClickListener {
 
         while (cursor.moveToNext()) {
             val name = cursor.getString(cursor.getColumnIndex("Vname"))
-            val id = cursor.getString(cursor.getColumnIndex("Vidnum"))
+            //val id = cursor.getString(cursor.getColumnIndex("Vidnum"))
             //val phone = cursor.getString(cursor.getColumnIndex("Phonenum"))
             //val email = cursor.getString(cursor.getColumnIndex("Email"))
             //val address = cursor.getString(cursor.getColumnIndex("HomeAddress"))
