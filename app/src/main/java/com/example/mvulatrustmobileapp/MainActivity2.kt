@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -17,6 +18,19 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
+
+        // Retrieve the email from the intent
+        val email = intent.getStringExtra("email")
+
+        // Check if the email is not null
+        if (email != null) {
+            // Show a toast message to notify the user about the echoing email
+            Toast.makeText(this, "Welcome: $email", Toast.LENGTH_SHORT).show()
+        } else {
+            // If the email is null, show a different toast message or handle it accordingly
+            Toast.makeText(this, "No email found in the intent", Toast.LENGTH_SHORT).show()
+        }
+
 
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
 
