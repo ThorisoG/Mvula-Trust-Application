@@ -18,20 +18,39 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
-            android:id="@+id/notifications"
+            android:id="@+id/profile_picture"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="66dp"
+            android:src="@drawable/user_2"
             android:layout_marginBottom="16dp"
-            android:src="@drawable/bell"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="70dp"/>
 
+
+        <TextView
+            android:id="@+id/greeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/profile_picture"
+            android:text="Hello"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/greeting"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="normal" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -54,25 +73,29 @@
             android:textSize="33sp"
             android:textStyle="normal" />
 
-        <EditText
-            android:id="@+id/search"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_below="@+id/textView0"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView0"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="70dp"
-            android:background="@drawable/edit_bg"
-            android:drawableStart="@drawable/icon_search"
-            android:drawableEnd="@drawable/icons8_mic_50"
-            android:drawablePadding="16dp"
-            android:ems="10"
-            android:hint="Search...."
-            android:inputType="text"
-            android:textColor="@color/white"
-            android:textColorHint="#D6D1D1"
-            android:textSize="23sp" />
+            android:layout_marginEnd="-150dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/chatbot"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="end"
+                android:src="@drawable/icon_message_2" />
+
+            <ImageButton
+                android:id="@+id/gallery"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:src="@drawable/imagegallery" />
+        </LinearLayout>
 
     </RelativeLayout>
 
@@ -311,7 +334,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginEnd="120dp"
+        android:layout_marginEnd="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="-50dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -370,22 +393,9 @@
                     android:textStyle="bold" />
 
             </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/chatbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="50dp"
-        app:fabSize="normal"
-        android:backgroundTint="@color/blue"
-        app:elevation="6dp"
-        android:src="@drawable/icon_message_2"
-        app:tint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

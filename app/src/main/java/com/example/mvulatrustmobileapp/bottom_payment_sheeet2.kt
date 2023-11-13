@@ -71,6 +71,7 @@ class bottom_payment_sheeet2 : BottomSheetDialogFragment() {
                 Toast.makeText(requireContext(), "Donation Payment Failed", Toast.LENGTH_SHORT).show()
             }
         }
+
         return view
     }
 

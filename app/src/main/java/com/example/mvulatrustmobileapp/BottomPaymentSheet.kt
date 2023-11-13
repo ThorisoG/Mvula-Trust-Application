@@ -1,5 +1,7 @@
 package com.example.mvulatrustmobileapp
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -8,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -37,7 +40,9 @@ private const val ARG_PARAM2 = "param2"
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,21 +58,15 @@ private const val ARG_PARAM2 = "param2"
         amountTextView?.text = amount
         val donatorsname = view.findViewById<TextView>(R.id.Names)
 
-        val payButton = view.findViewById<Button>(R.id.payButton)
+        val payButton = view.findViewById<Button>(R.id.pay)
         payButton.setOnClickListener {
             // Insert donation into the database
             val db = DatabaseHelper(requireContext())
-            val donationInserted = db.insertDonation(donatorsname.text.toString(), amount?.toDoubleOrNull() ?: 0.0)
-
-            if (donationInserted) {
-                //if the user has hand
-                showLoadingDialog()
-            } else {
-                // Handling insertion failure//
-                Toast.makeText(requireContext(), "Donation Payment Failed", Toast.LENGTH_SHORT).show()
-            }
+            val donationInserted =
+                db.insertDonation(donatorsname.text.toString(), amount?.toDoubleOrNull() ?: 0.0)
         }
-        return view
+
+            return view
     }
 
     fun updateAmount(amount: String) {

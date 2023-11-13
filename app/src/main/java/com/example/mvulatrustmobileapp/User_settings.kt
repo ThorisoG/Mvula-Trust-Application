@@ -62,6 +62,7 @@ class User_settings : Fragment() {
         chatButton.setOnClickListener {
             val intent1 = Intent(requireContext(), MainActivity3::class.java)
             requireContext().startActivity(intent1)
+
         }
 
         return rootView
