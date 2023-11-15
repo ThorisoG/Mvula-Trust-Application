@@ -212,19 +212,20 @@
             android:textColor="@color/white"
             android:textSize="19dp" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/chatbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="50dp"
+            android:backgroundTint="@color/blue"
+            android:src="@drawable/icon_message_2"
+            app:elevation="6dp"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white" />
+
     </LinearLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/chatbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="50dp"
-        app:fabSize="normal"
-        android:backgroundTint="@color/blue"
-        app:elevation="6dp"
-        android:src="@drawable/icon_message_2"
-        app:tint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

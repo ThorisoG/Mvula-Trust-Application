@@ -37,7 +37,6 @@ class Donation : Fragment() {
 
         }
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -120,7 +119,7 @@ class Donation : Fragment() {
                     selectedAmount
                 } else {
                     // Handle the case where neither a preselected nor custom amount is valid
-                    Toast.makeText(requireContext(), "Please enter a valid non-zero amount", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Please enter a Number above zero", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
                 }
 
@@ -142,18 +141,19 @@ class Donation : Fragment() {
             else
             {
                 // Handle the case where neither a preselected nor custom amount is available
-                if(selectedCardView == null)
-                {
-                    //this is for if the user didnt select a payment method
-                    Toast.makeText(requireContext(), "Please select a payment method", Toast.LENGTH_SHORT).show()
+                if (selectedCardView == null) {
+                    // This is for if the user didn't select a payment method
+                    Toast.makeText(requireContext(), "Please select an amount & payment method", Toast.LENGTH_SHORT).show()
                 }
-                //exception handling if the user has entered zero//
-
+                else
+                {
+                    // This is for if the user entered zero or an invalid amount
+                    Toast.makeText(requireContext(), "Please enter a valid non-zero donation amount", Toast.LENGTH_SHORT).show()
+                }
             }
         }
         return view
     }
-
 
     companion object {
         /**

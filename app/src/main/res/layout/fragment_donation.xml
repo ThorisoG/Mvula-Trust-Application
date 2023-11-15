@@ -182,7 +182,7 @@
         android:layout_height="wrap_content"
         android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="Enter price manually"
+        android:hint="Enter the price Manually"
         android:inputType="number"
         android:padding="10dp"
         android:textColor="@color/black"
