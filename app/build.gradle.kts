@@ -13,6 +13,7 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
+        multiDexEnabled = true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -56,6 +57,9 @@ dependencies {
     //implementation of the chat-bot
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.5.0")
+
+    //PDF VIEWER
+    implementation("com.github.barteksc:android-pdf-viewer:2.8.2")
 
 
 }
