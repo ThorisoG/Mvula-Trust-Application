@@ -64,7 +64,48 @@ class Volunteer_form : Fragment() {
             val address = view.findViewById<EditText>(R.id.address).text.toString()
             val program = view.findViewById<AutoCompleteTextView>(R.id.auto_complete1).text.toString()
             val qualification = view.findViewById<AutoCompleteTextView>(R.id.auto_complete2).text.toString()
-            val volunteerStatus = "Pending" // Assuming all new entries start as "Pending"
+            val volunteerStatus = "Pending" // all new volunteers start at "Pending"
+
+            // Perform validation //
+            if (name.isEmpty() || idNum.isEmpty() || phoneNum.isEmpty() || email.isEmpty() || address.isEmpty() || program.isEmpty() || qualification.isEmpty()) {
+                // Show an error message if any field is empty
+                Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (idNum.length != 13 || !idNum.all { it.isDigit() }) {
+                // Show an error message if the ID number is not exactly 13 digits or contains non-digit characters
+                Toast.makeText(requireContext(), "Invalid ID number. It should be 13 digits.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            //Validating the email to ensure accurate input//
+            val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+            if (!email.matches(emailPattern.toRegex())) {
+                // Show an error message if the email format is invalid
+                Toast.makeText(requireContext(), "Invalid email address.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                // Show an error message if the email format is invalid
+                Toast.makeText(requireContext(), "Invalid email address.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            //validating phone number//
+            if (phoneNum.length != 10 || !phoneNum.all { it.isDigit() }) {
+                // Show an error message if the phone number is not exactly 10 digits or contains non-digit characters
+                Toast.makeText(requireContext(), "Invalid phone number. It should be 10 digits.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            //Validating Home Address//
+            if (address.isEmpty()) {
+                // Show an error message if the address is empty
+                Toast.makeText(requireContext(), "Please enter your home address", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
 
             val dbHelper = DatabaseHelper(requireContext())
 
@@ -85,7 +126,6 @@ class Volunteer_form : Fragment() {
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show()
         }
-
 
         val items = listOf(
             "Water Resource Management",

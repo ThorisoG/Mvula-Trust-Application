@@ -52,8 +52,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="363dp"
-        android:layout_height="210dp"
+        android:layout_width="370dp"
+        android:layout_height="293dp"
         android:layout_margin="16dp"
         app:cardCornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,7 +64,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="16dp"
             tools:layout_editor_absoluteX="0dp"
@@ -96,44 +96,27 @@
                 android:onClick="Login"
                 android:text="Login" />
 
-            <!-- Center the button within the CardView -->
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
             <TextView
                 android:id="@+id/textView44"
-                android:layout_width="347dp"
+                android:layout_width="329dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
                 android:text="Click here to go back to user Login"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="wrap_content"
+                android:layout_width="135dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right"
                 android:onClick="Prev"
                 android:text="User Login" />
-        </LinearLayout>
 
+            <!-- Center the button within the CardView -->
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 
