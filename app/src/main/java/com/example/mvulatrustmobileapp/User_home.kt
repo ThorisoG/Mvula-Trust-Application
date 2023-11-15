@@ -30,8 +30,9 @@ class User_home : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var chatbot: ImageButton
-    private lateinit var gallery: ImageButton
     private var userEmail: String? = null
+
+    private lateinit var galleryButton: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +44,7 @@ class User_home : Fragment() {
         }
 
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,16 +62,12 @@ class User_home : Fragment() {
         val program4 = rootView.findViewById<CardView>(R.id.program4) //Local Government Support
         val program5 = rootView.findViewById<CardView>(R.id.program5) //Infrastructure Creation and Property Development"
         chatbot = rootView.findViewById(R.id.chatbot)
-        gallery = rootView.findViewById(R.id.gallery)
 
-
-        val galleryButton = rootView.findViewById<ImageButton>(R.id.gallery)
-
+        galleryButton = rootView.findViewById<ImageButton>(R.id.gallery)  // Initialize galleryButton
         galleryButton.setOnClickListener {
-            val intent = Intent(requireContext(), MainActivity4::class.java)
+            val intent = Intent(requireContext(), GalleryPage::class.java)
             startActivity(intent)
         }
-
 
         program1.setOnClickListener {
             val intent = Intent(requireContext(), Program1::class.java)
@@ -100,10 +98,6 @@ class User_home : Fragment() {
             startActivity(intent)
         }
 
-        gallery.setOnClickListener {
-            val intent = Intent(requireContext(), MainActivity4::class.java)
-            startActivity(intent)
-        }
             return rootView
             }
 

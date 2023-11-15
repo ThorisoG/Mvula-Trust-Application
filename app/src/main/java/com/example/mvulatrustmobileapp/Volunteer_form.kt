@@ -47,7 +47,7 @@ class Volunteer_form : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val uploadbutton = view.findViewById<Button>(R.id.uploadButton)
+        val uploadbutton = view.findViewById<ImageButton>(R.id.uploadButton)
         uploadbutton.setOnClickListener {
             val intent = Intent(requireContext(), UploadDocuments::class.java)
             startActivity(intent)
