@@ -143,7 +143,6 @@ class AdministrationMenu : AppCompatActivity() {
             notificationBell.setImageResource(R.drawable.notificationactive)
             triggerNotification("$newDonationsCount new donations", 3)
         }
-
     }
 
     private fun showLogoutConfirmationDialog() {

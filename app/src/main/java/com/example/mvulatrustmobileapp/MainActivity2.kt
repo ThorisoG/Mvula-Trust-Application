@@ -14,6 +14,7 @@ import com.google.android.material.navigation.NavigationView
 
 class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    var Email2 = ""
     private lateinit var drawerLayout: DrawerLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +27,22 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         if (email != null) {
             // Show a toast message to notify the user about the echoing email
             Toast.makeText(this, "Welcome: $email", Toast.LENGTH_SHORT).show()
+            Email2 = email
+
         } else {
             // If the email is null, show a different toast message or handle it accordingly
             Toast.makeText(this, "No email found in the intent", Toast.LENGTH_SHORT).show()
         }
 
+        // Inside your MainActivity2 where you replace the fragment
+        val userHomeFragment = User_home.newInstance("param1", "param2").apply {
+            arguments = Bundle().apply {
+                putString("email", email)
+            }
+        }
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, userHomeFragment)
+            .commit()
 
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
 
@@ -63,7 +75,6 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 .replace(R.id.fragment_container, User_settings()).commit()
             R.id.nav_about -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, About_us()).commit()
-   
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

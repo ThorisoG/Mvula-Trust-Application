@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 
@@ -54,9 +55,9 @@ class Donation : Fragment() {
         val cardView5 = view.findViewById<CardView>(R.id.cardview5)
 
         //paypal//
-        val cardView6 = view.findViewById<CardView>(R.id.cardview6)
+        val cardView6 = view.findViewById<CardView>(R.id.cardview7)
 
-        /*val amount = view.findViewById<EditText>(R.id.amount)
+        val amount = view.findViewById<EditText>(R.id.amount)
 
                 cardView1.setOnClickListener {
                     // Set the selected amount when cardView1 is clicked
@@ -82,53 +83,77 @@ class Donation : Fragment() {
                     amount.setText(selectedAmount)
                 }
         cardView5.setOnClickListener {
-            // Set the selected amount when cardView5 is clicked
+            // This is master card //
             selectedCardView = cardView5
+            if (selectedCardView != null) {
+                Toast.makeText(requireContext(), "MasterCard selected", Toast.LENGTH_SHORT).show()
+            }
+            else
+            {
+                Toast.makeText(requireContext(), "You Have not selected a payment option", Toast.LENGTH_SHORT).show()
+            }
         }
 
         cardView6.setOnClickListener {
-            // Set the selected amount when cardView7 is clicked
+            // This is paypal
             selectedCardView = cardView6
+            if (selectedCardView != null) {
+                Toast.makeText(requireContext(), "PayPal selected", Toast.LENGTH_SHORT).show()
+            }
+            else
+            {
+                Toast.makeText(requireContext(), "You Have not selected a payment option", Toast.LENGTH_SHORT).show()
+            }
         }
 
 
         payButton.setOnClickListener {
-                        if (selectedAmount != null) {
-                            if (selectedCardView == cardView5) {
-                                val bottomFragment = BottomPaymentSheet()
-                                bottomFragment.arguments = Bundle().apply {
-                                    putString("amount", selectedAmount)
-                                }
-                                bottomFragment.show(childFragmentManager, bottomFragment.tag)
-                            } else {
-                                val bottomFragment = bottom_payment_sheeet2()
-                                bottomFragment.arguments = Bundle().apply {
-                                    putString("amount", selectedAmount)
-                                }
-                                bottomFragment.show(childFragmentManager, bottomFragment.tag)
-                            }
-                        }
-                    }*/
+            val enteredAmount = amount.text.toString().trim()
 
-                    return view
+            if (selectedCardView == cardView5 || selectedCardView == cardView6) {
+                // User selected a preselected amount
+                val amountToSend = if (enteredAmount.isNotBlank() && enteredAmount.toDouble() > 0) {
+                    // Use the custom amount if entered and non-zero
+                    enteredAmount
+                } else if (selectedAmount != null && selectedAmount!!.toDouble() > 0) {
+                    // Use the preselected amount if available and non-zero
+                    selectedAmount
+                } else {
+                    // Handle the case where neither a preselected nor custom amount is valid
+                    Toast.makeText(requireContext(), "Please enter a valid non-zero amount", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
                 }
-                        // Check if an amount is selected, then show the BottomPaymentSheet
-                        /*if (selectedAmount != null) {
-                        /*val bottomFragment = BottomPaymentSheet()
-                        bottomFragment.arguments = Bundle().apply {
-                            putString("amount", selectedAmount)
-                        }*/
-                        val bottomFragment = if (selectedCardView == cardView5) {
-                            BottomPaymentSheet()
-                        } else {
-                            bottom_payment_sheeet2()
-                        }
 
-                        bottomFragment.arguments = Bundle().apply {
-                            putString("amount", selectedAmount)
-                        }
+                if (selectedCardView == cardView5) {
+                    val bottomFragment = BottomPaymentSheet()
+                    bottomFragment.arguments = Bundle().apply {
+                        putString("amount", amountToSend)
                     }
-                        bottomFragment.show(childFragmentManager, bottomFragment.tag)*/
+                    bottomFragment.show(childFragmentManager, bottomFragment.tag)
+                }
+                if (selectedCardView == cardView6) {
+                    val bottomFragment = bottom_payment_sheeet2()
+                    bottomFragment.arguments = Bundle().apply {
+                        putString("amount", amountToSend)
+                    }
+                    bottomFragment.show(childFragmentManager, bottomFragment.tag)
+                }
+            }
+            else
+            {
+                // Handle the case where neither a preselected nor custom amount is available
+                if(selectedCardView == null)
+                {
+                    //this is for if the user didnt select a payment method
+                    Toast.makeText(requireContext(), "Please select a payment method", Toast.LENGTH_SHORT).show()
+                }
+                //exception handling if the user has entered zero//
+
+            }
+        }
+        return view
+    }
+
 
     companion object {
         /**

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
@@ -49,14 +50,57 @@ class bottom_payment_sheeet2 : BottomSheetDialogFragment() {
         // Retrieve the amount from the arguments //
         val amount = arguments?.getString("amount")
 
-
         // Update the amount text view
         val amountTextView = view.findViewById<TextView>(R.id.amountTextView)
         amountTextView?.text = amount
-
         val donatorsname = view.findViewById<TextView>(R.id.firstName)
+        val donatorsurname = view.findViewById<TextView>(R.id.surName)
 
-        val payButton = view.findViewById<Button>(R.id.pay)
+        val payment = view.findViewById<ImageButton>(R.id.pay)
+        payment.setOnClickListener {
+            val amount = amountTextView.text.toString().trim()
+            val name = donatorsname.text.toString().trim()
+            val surname = donatorsurname.text.toString().trim()
+
+            if (amount.isNotEmpty() && name.isNotEmpty() && surname.isNotEmpty())
+            {
+                // Processing Payment Logic
+                Toast.makeText(context, "Processing Payment", Toast.LENGTH_SHORT).show()
+                //Making the user be able to insert into the database
+                val amount = arguments?.getString("amount")
+                // Insert donation into the database
+                val donatorsfullname = name +" "+surname
+                val db = DatabaseHelper(requireContext())
+                val donationInserted = db.insertDonation(donatorsfullname, amount?.toDoubleOrNull() ?: 0.0)
+                if (donationInserted)
+                {
+                    showLoadingDialog()
+                }
+                else
+                {
+                    // Handling insertion failure//
+                    Toast.makeText(requireContext(), "Donation Payment Failed", Toast.LENGTH_SHORT).show()
+                }
+            }
+            else
+            {
+                // Error Handling if the user did not put anything on the payment
+                if (amount.isEmpty())
+                {
+                    Toast.makeText(context, "Please provide the donation amount", Toast.LENGTH_SHORT).show()
+                }
+                else if (name.isEmpty())
+                {
+                    Toast.makeText(context, "Please enter the donor's first name", Toast.LENGTH_SHORT).show()
+                }
+                else if (surname.isEmpty())
+                {
+                    Toast.makeText(context, "Please enter the donor's last name", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+        /*val payButton = view.findViewById<Button>(R.id.pay)
         payButton.setOnClickListener {
             //Making the user be able to insert into the database
             val amount = arguments?.getString("amount")
@@ -70,7 +114,7 @@ class bottom_payment_sheeet2 : BottomSheetDialogFragment() {
                 // Handling insertion failure//
                 Toast.makeText(requireContext(), "Donation Payment Failed", Toast.LENGTH_SHORT).show()
             }
-        }
+        }*/
 
         return view
     }

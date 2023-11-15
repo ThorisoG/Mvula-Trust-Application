@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.ProgressBar
@@ -40,10 +41,8 @@ private const val ARG_PARAM2 = "param2"
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-
     }
-
-
+    
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -53,20 +52,64 @@ private const val ARG_PARAM2 = "param2"
         // Retrieve the amount from the arguments
         val amount = arguments?.getString("amount")
 
-        // Update the amount text view
+        // Update the amount text view //
         val amountTextView = view.findViewById<TextView>(R.id.amountTextView)
         amountTextView?.text = amount
-        val donatorsname = view.findViewById<TextView>(R.id.Names)
+        val cardholder = view.findViewById<EditText>(R.id.Names)
+        val cardnum = view.findViewById<EditText>(R.id.cardNo)
+        val expirynum = view.findViewById<EditText>(R.id.cellno)
+        val cvc = view.findViewById<EditText>(R.id.email)
 
-        val payButton = view.findViewById<Button>(R.id.pay)
-        payButton.setOnClickListener {
-            // Insert donation into the database
-            val db = DatabaseHelper(requireContext())
-            val donationInserted =
-                db.insertDonation(donatorsname.text.toString(), amount?.toDoubleOrNull() ?: 0.0)
+        val payments = view.findViewById<ImageButton>(R.id.pay)
+        payments.setOnClickListener {
+
+            val amount = amountTextView.text.toString().trim()
+            val holderName = cardholder.text.toString().trim()
+            val cardNumber = cardnum.text.toString().trim()
+            val expiryNumber = expirynum.text.toString().trim()
+            val cvcNumber = cvc.text.toString().trim()
+
+            if (amount.isEmpty())
+            {
+                Toast.makeText(requireContext(), "Please provide the donation amount", Toast.LENGTH_SHORT).show()
+            }
+            else if (holderName.isEmpty())
+            {
+                Toast.makeText(requireContext(), "Please enter the cardholder's name", Toast.LENGTH_SHORT).show()
+            }
+            else if (cardNumber.isEmpty() || cardNumber.length != 16)
+            {
+                Toast.makeText(requireContext(), "Please enter a valid 16-digit card number", Toast.LENGTH_SHORT).show()
+            }
+            else if (expiryNumber.isEmpty())
+            {
+                Toast.makeText(requireContext(), "Please enter the expiry date", Toast.LENGTH_SHORT).show()
+            }
+            else if (cvcNumber.isEmpty() || cvcNumber.length != 3)
+            {
+                Toast.makeText(requireContext(), "Please enter a valid 3-digit CVV number", Toast.LENGTH_SHORT).show()
+            }
+            else
+            {
+                // if all the fields meet the required criteria then donation can occur//
+                Toast.makeText(requireContext(), "Processing Payment", Toast.LENGTH_SHORT).show()
+                // Insert donation into the database
+                val db = DatabaseHelper(requireContext())
+                val donationInserted = db.insertDonation(cardholder.text.toString(), amount?.toDoubleOrNull() ?: 0.0)
+
+                if (donationInserted)
+                {
+                    //if the user has successfully donated//
+                    showLoadingDialog()
+                }
+                else
+                {
+                    // Handling insertion failure//
+                    Toast.makeText(requireContext(), "Donation Payment Failed", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
-
-            return view
+        return view
     }
 
     fun updateAmount(amount: String) {

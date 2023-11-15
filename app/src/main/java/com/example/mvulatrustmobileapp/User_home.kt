@@ -1,5 +1,6 @@
 package com.example.mvulatrustmobileapp
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.cardview.widget.CardView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -28,16 +30,15 @@ class User_home : Fragment() {
     private var param2: String? = null
     private lateinit var chatbot: ImageButton
     private lateinit var gallery: ImageButton
+    private var userEmail: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
-
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
-
+            userEmail = it.getString("email")
         }
 
     }
@@ -47,8 +48,10 @@ class User_home : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-
         val rootView = inflater.inflate(R.layout.fragment_user_home, container, false)
+
+        val emailTextView = rootView.findViewById<TextView>(R.id.greeting)
+        emailTextView.text = "User Email: $userEmail"
 
         val program1 = rootView.findViewById<CardView>(R.id.program1)  //Water Resource Management
         val program2 = rootView.findViewById<CardView>(R.id.program2) //Training and Advocacy
