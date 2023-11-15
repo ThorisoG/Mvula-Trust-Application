@@ -20,6 +20,8 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
+
+
         // Retrieve the email from the intent
         val email = intent.getStringExtra("email")
 
@@ -79,6 +81,7 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
+
 
     override fun onBackPressed() {
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
